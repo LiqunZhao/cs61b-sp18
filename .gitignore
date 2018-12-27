@@ -6,6 +6,7 @@
 !.expelimicate
 !.gitignore
 .class
+*.class
 *.log
 *.ctxt
 .mtj.tmp/
