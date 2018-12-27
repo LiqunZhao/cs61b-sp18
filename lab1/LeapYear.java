@@ -3,6 +3,9 @@
  */
 public class LeapYear {
 
+    /** Checks if year is leap year or not.
+     *  @param year to be checked
+    */
     public static boolean isLeapYear(int year) {
         if (year % 400 == 0) {
             return true;
