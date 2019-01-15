@@ -1,12 +1,12 @@
   
-
-
+  
+  
 # cs61b-sp18 - aviatesk
   
   
-This repository is for [aviatesk][aviatesk]'s self-learning of algorithms and data structure with the materials for [CS61B][CS61B], which is taught at UC Berkeley in Spring 2018 by Josh Hug.
+This repository is for [aviatesk]'s self-learning of algorithms and data structure with the materials for [CS61B], taught at UC Berkeley in Spring 2018 by Josh Hug.
   
-Beyond of all, I really, really appreciate that this great learning-materials is made public, and want to say an infinite thanks to the instructor Josh and everyone who contributed to his lecture.
+Beyond of all, I really, really appreciate this great learning-materials is made public, and want to say the infinite thanks to the instructor Josh and everyone who contributed to his lecture.
   
   
   
@@ -14,11 +14,13 @@ Beyond of all, I really, really appreciate that this great learning-materials is
   
   
 - [x] week 1
+    - [x] [note](./notes/week1.html )
+    - [x] [lab1](./lab1 )
     - [x] hw0
-    - [x] lab1
 - [ ] week 2
+    - [ ] [note](./notes/week2.html )
     - [ ] lab2
-    - [ ] project 0
+    - [ ] proj0
   
   
   
@@ -26,7 +28,7 @@ Beyond of all, I really, really appreciate that this great learning-materials is
   
   
 - Course web-page: https://sp18.datastructur.es/index.html
-- The repository containing original *skeleton* code: https://github.com/Berkeley-CS61B/skeleton-sp18
+- The repository is originally cloned from: https://github.com/Berkeley-CS61B/skeleton-sp18
 - Auto-grader: https://www.gradescope.com/
   
   
@@ -34,7 +36,7 @@ Beyond of all, I really, really appreciate that this great learning-materials is
 ## Who I am
   
   
-**KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk][aviatesk]
+**KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
   
   
   
