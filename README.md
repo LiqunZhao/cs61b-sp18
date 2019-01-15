@@ -13,12 +13,12 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 ## TODOs
   
   
-- [x] week 1
-    - [x] [note](./notes/week1.html )
+- [x] Week 1
+    - [x] [note](./notes/week1.md )
     - [x] [lab1](./lab1 )
     - [x] hw0
-- [ ] week 2
-    - [ ] [note](./notes/week2.html )
+- [ ] Week 2
+    - [ ] [note](./notes/week2.md )
     - [ ] lab2
     - [ ] proj0
   
