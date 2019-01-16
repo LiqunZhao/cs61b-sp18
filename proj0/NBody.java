@@ -64,6 +64,7 @@ public class NBody {
 
         /** Play the space-audio */
         StdAudio.play(backgroundMusic);
+
         /**
             In this main loop, updating and rendering each Planet's movements with increasing time variable: t
          */
