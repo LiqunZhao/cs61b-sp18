@@ -20,8 +20,14 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 - [ ] Week 2
     - [ ] [note](./notes/week2.md )
     - [ ] lab2
-    - [ ] proj0
+    - [x] [proj0](./proj0 )
   
+  
+## Bugs
+  
+  
+- [proj0](./proj0 ): Some characters in [StdDraw.java](./proj0/StdDraw.java ) could not be compiled
+    - 94c2adea81ea826b103303e4285a62a2ff790615
   
   
 ## References
