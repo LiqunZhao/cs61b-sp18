@@ -29,16 +29,16 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 - 94c2ade: Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java ) could not be compiled on my environment
   
   
-### Versions
+### Java versions (on Windows 10)
   
   
-```cmd
-java
+> java -version 
+  
 ```
-  
-  
-- Java: 1.8.0_171
-- Windows: 10
+java version "1.8.0_171"
+Java(TM) SE Runtime Environment (build 1.8.0_171-b11)
+Java HotSpot(TM) Client VM (build 25.171-b11, mixed mode, sharing)
+```
   
   
 ## References
