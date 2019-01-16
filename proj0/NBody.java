@@ -3,7 +3,7 @@
  */
 public class NBody {
 
-    private static String backgroundImage = "./images/starfield.jpg"; // background image
+    private static final String backgroundImage = "./images/starfield.jpg"; // background image
     private static final String backgroundMusic = "./audio/2001.mid"; // background music
 
     /**
@@ -47,9 +47,9 @@ public class NBody {
         double T = Double.parseDouble(args[0]);
         double dt = Double.parseDouble(args[1]);
         String filename = args[2];
-        if (args.length > 3) {
-            NBody.backgroundImage = args[3];
-        }
+        // if (args.length > 3) {
+        //     NBody.backgroundImage = args[3];
+        // }
 
         /** Read Planets and the universe radius defined in filename */
         double radius = readRadius(filename);
