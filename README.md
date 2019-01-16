@@ -26,8 +26,19 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 ## Bugs
   
   
-- [proj0](./proj0 ): Some characters in [StdDraw.java](./proj0/StdDraw.java ) could not be compiled
-    - 94c2adea81ea826b103303e4285a62a2ff790615
+- 94c2ade: Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java ) could not be compiled on my environment
+  
+  
+### Versions
+  
+  
+```cmd
+java
+```
+  
+  
+- Java: 1.8.0_171
+- Windows: 10
   
   
 ## References
