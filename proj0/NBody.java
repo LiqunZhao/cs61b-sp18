@@ -12,10 +12,10 @@ public class NBody {
     public static double readRadius(String s) {
 		In in = new In(s);
 
-        int n = in.readInt();
-        double r = in.readDouble();
+        in.readInt();
+        double radius = in.readDouble();
 
-        return r;
+        return radius;
     }
 
     /**
@@ -25,7 +25,7 @@ public class NBody {
         In in = new In(s);
 
         int n = in.readInt();
-        double r = in.readDouble();
+        in.readDouble();
 
         Planet[] allPlanets = new Planet[n];
         for (int i = 0; i < n; i++) {
