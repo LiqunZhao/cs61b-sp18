@@ -3,13 +3,13 @@
  */
 public class NBody {
 
-    static String backgroundImage = "./images/starfield.jpg"; // background image
-    static final String backgroundMusic = "./audio/2001.mid"; // background music
+    private static String backgroundImage = "./images/starfield.jpg"; // background image
+    private static final String backgroundMusic = "./audio/2001.mid"; // background music
 
     /**
         Returns a double corresponding to the radius of the universe in given file
      */
-    public static double readRadius(String s) {
+    private static double readRadius(String s) {
 		In in = new In(s);
 
         int n = in.readInt();
@@ -21,7 +21,7 @@ public class NBody {
     /**
         Returns an array of Planets corresponding to the planets defined in given file
      */
-    public static Planet[] readPlanets(String s) {
+    private static Planet[] readPlanets(String s) {
         In in = new In(s);
 
         int n = in.readInt();

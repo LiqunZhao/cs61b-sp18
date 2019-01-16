@@ -1,6 +1,6 @@
 public class Planet {
 
-    static final double G = 6.67 * 1e-11; // Gravitational constant
+    private static final double G = 6.67 * 1e-11; // Gravitational constant
 
     public double xxPos; // current x position
     public double yyPos; // current y position
@@ -85,7 +85,7 @@ public class Planet {
     /**
         Judges this.Planet is equal to given Plane
      */
-    public Boolean equals(Planet p) {
+    private Boolean equals(Planet p) {
         if (xxPos == p.xxPos && yyPos == p.yyPos && xxVel == p.xxVel &&
             yyVel == p.yyVel && mass == p.mass && imgFileName == p.imgFileName) {
             return true;
