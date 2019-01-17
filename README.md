@@ -18,15 +18,43 @@ Beyond of all, I really, really appreciate this great learning-materials is made
     - [x] [lab1](./lab1 )
     - [x] hw0
 - [ ] Week 2
-    - [ ] [note](./notes/week2.md )
+    <!-- - [ ] [note](./notes/week2.md ) -->
     - [ ] lab2
     - [x] [proj0](./proj0 )
   
   
-## Bugs
+## Bugs and fix
   
   
-- 94c2ade: Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java ) could not be compiled on my environment
+- [proj0](./proj0 ): Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java ) could not be compiled on my environment
+    - Fix: [`94c2ade`](https://github.com/aviatesk/cs61b-sp18/commit/94c2adea81ea826b103303e4285a62a2ff790615 ):
+  
+> javac NBody.java
+  
+```
+.\StdDraw.java:299: error: unmappable character (0x92) for encoding windows-31j
+ *  You save your image to a file using the <em>File 竊? Save</em> menu option.
+                                                      ^
+.\StdDraw.java:433: error: unmappable character (0x93) for encoding windows-31j
+ *       from (0.5, 窶?&infin;) to (0.5, &infin;) may not be visible even in the
+                     ^
+  
+.\StdDraw.java:1190: error: unmappable character (0x93) for encoding windows-31j
+     * (<em>x</em><sub><em>n</em>窶?1</sub>, <em>y</em><sub><em>n</em>窶?1</sub>).
+                                  ^
+.\StdDraw.java:1190: error: unmappable character (0x93) for encoding windows-31j
+     * (<em>x</em><sub><em>n</em>窶?1</sub>, <em>y</em><sub><em>n</em>窶?1</sub>).
+                                                                      ^
+.\StdDraw.java:1219: error: unmappable character (0x93) for encoding windows-31j
+     * (<em>x</em><sub><em>n</em>窶?1</sub>, <em>y</em><sub><em>n</em>窶?1</sub>).
+                                  ^
+.\StdDraw.java:1219: error: unmappable character (0x93) for encoding windows-31j
+     * (<em>x</em><sub><em>n</em>窶?1</sub>, <em>y</em><sub><em>n</em>窶?1</sub>).
+                                                                      ^
+Note: .\StdDraw.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+6 errors
+```
   
   
 ### Java versions (on Windows 10)
@@ -35,9 +63,9 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 > java -version 
   
 ```
-java version "1.8.0_171"
-Java(TM) SE Runtime Environment (build 1.8.0_171-b11)
-Java HotSpot(TM) Client VM (build 25.171-b11, mixed mode, sharing)
+java version "11.0.2" 2018-10-16 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.2+7-LTS)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
 ```
   
   
