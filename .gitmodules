@@ -1,6 +1,0 @@
-[submodule "library-sp18"]
-	path = library-sp18
-	url = https://github.com/Berkeley-CS61B/library-sp18.git
-[submodule "lectureCode"]
-	path = lectureCode
-	url = https://github.com/aviatesk/cs61b-sp18-lectureCode.git
