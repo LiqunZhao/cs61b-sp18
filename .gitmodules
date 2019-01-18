@@ -3,4 +3,4 @@
 	url = https://github.com/Berkeley-CS61B/library-sp18.git
 [submodule "lectureCode"]
 	path = lectureCode
-	url = git@github.com:Berkeley-CS61B/lectureCode-sp18.git
+	url = https://github.com/aviatesk/cs61b-sp18-lectureCode.git
