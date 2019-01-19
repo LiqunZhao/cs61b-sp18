@@ -81,11 +81,11 @@ public class IntList {
      * Using recursive structure.
      */
     public static IntList dcatenate(IntList A, IntList B) {
-        if (A.rest == null) {
-            A.rest = B;
+        if (A == null) {
+            A = B;
             return A;
         } else {
-            IntList.dcatenate(A.rest, B);
+            A.rest = IntList.dcatenate(A.rest, B);
             return A;
         }
     }
