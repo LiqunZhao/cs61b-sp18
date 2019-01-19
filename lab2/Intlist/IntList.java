@@ -37,7 +37,6 @@ public class IntList {
      * Returns a list equal to L with all elements squared. Destructive.
      */
     public static void dSquareList(IntList L) {
-
         while (L != null) {
             L.first = L.first * L.first;
             L = L.rest;
@@ -75,37 +74,67 @@ public class IntList {
     /** DO NOT MODIFY ANYTHING ABOVE THIS LINE! */
 
 
+
     /**
      * Returns a list consisting of the elements of A followed by the
-     * *  elements of B.  May modify items of A. Don't use 'new'.
+     * elements of B.  May modify items of A. Don't use 'new'.
+     * Using recursive structure.
      */
-
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        if (A.rest == null) {
+            A.rest = B;
+            return A;
+        } else {
+            IntList.dcatenate(A.rest, B);
+            return A;
+        }
     }
 
     /**
      * Returns a list consisting of the elements of A followed by the
-     * * elements of B.  May NOT modify items of A.  Use 'new'.
+     * elements of B.  May modify items of A. Don't use 'new'.
+     * Using iterative structure.
+     */
+    public static IntList dcatenateIterative(IntList A, IntList B) {
+        IntList res = A;
+        while (res.rest != null) {
+            res = res.rest;
+            continue;
+        }
+        res.rest = B;
+        return A;
+    }
+
+    /**
+     * Returns a list consisting of the elements of A followed by the
+     * elements of B.  May NOT modify items of A.  Use 'new'.
+     * Using recursive structure.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        return null;
+        if (A == null) {
+            return B;
+        } else {
+            return new IntList(A.first, catenate(A.rest, B));
+        }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
+    /**
+     * Returns a list consisting of the elements of A followed by the
+     * elements of B.  May NOT modify items of A.  Use 'new'.
+     * Using iterative structure.
+     */
+    public static IntList catenateIterative(IntList A, IntList B) {
+        IntList newA = new IntList(A.first, null);
+        IntList res = newA;
+        IntList currentA = A.rest;
+        while (currentA != null) {
+            res.rest = new IntList(currentA.first, null);
+            res = res.rest;
+            currentA = currentA.rest;
+        }
+        res.rest = B;
+        return newA;
+    }
 
 
 
@@ -231,4 +260,3 @@ public class IntList {
         return out.toString();
     }
 }
-
