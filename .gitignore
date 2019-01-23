@@ -1,4 +1,6 @@
-README_draft.md
+**/.idea/**
+*.iml
+**/out/**
 !*/
 !**.java
 !**.txt
