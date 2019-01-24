@@ -6,10 +6,10 @@ export_on_save:
     html: true
 ---
 
-<!-- Importing styles for numbering sections -->
-<!-- @import "C:\Users\aviat\.atom\mpe-styles\number_sections.less" -->
+<!-- Importing styles for numbering sections from h1 -->
+<!-- @import "C:\Users\aviat\.atom\mpe-styles\number_sections_fromh1_one_dark.less" -->
 
-# Week 1 - Lec.1 & Lec.2 {ignore=True}
+# Week 1 - Lec.1 & Lec.2 {ignore=True .ignorenumbering}
 
 - [Lec.1](#lec1-intro-hello-world-java): Intro, Hello World Java
 - [Lec.2](#lec2-defining-and-using-classes): Defining and Using Classes
@@ -17,26 +17,25 @@ export_on_save:
 
 ## TOC {ignore=True .ignorenumbering}
 
-<!-- @import "[TOC]" {cmd="toc" depthFrom=2 depthTo=6 orderedList=true} -->
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=2 orderedList=true} -->
 <!-- code_chunk_output -->
 
-1. [Hello world](#hello-world)
-2. [Static typing](#static-typing)
-3. [Declaring functions in Java](#declaring-functions-in-java)
-4. [Compilation](#compilation)
-5. [Defining and Instantiating Classes](#defining-and-instantiating-classes)
-    1. [Instantiating](#instantiating)
-    2. [Terminology](#terminology)
-6. [Arrays of Objects](#arrays-of-objects)
-7. [Static vs. Instance methods](#static-vs-instance-methods)
-    1. [Why Static Methods ?](#why-static-methods)
-8. [`public static void main(String[] args)` ?](#public-static-void-mainstring-args)
+1. [Lec.1 - Intro, Hello World Java](#lec1-intro-hello-world-java)
+    1. [Hello world](#hello-world)
+    2. [Static typing](#static-typing)
+    3. [Declaring functions in Java](#declaring-functions-in-java)
+2. [Lec.2 - Defining and Using Classes](#lec2-defining-and-using-classes)
+    1. [Compilation](#compilation)
+    2. [Defining and Instantiating Classes](#defining-and-instantiating-classes)
+    3. [Arrays of Objects](#arrays-of-objects)
+    4. [Static vs. Instance methods](#static-vs-instance-methods)
+    5. [`public static void main(String[] args)` ?](#public-static-void-mainstring-args)
 
 <!-- /code_chunk_output -->
 
 
 
-# Lec.1 - Intro, Hello World Java {ignore=True}
+# Lec.1 - Intro, Hello World Java
 
 ## Hello world
 
@@ -123,7 +122,7 @@ public class LargerDemo {
 
 
 
-# Lec.2 - Defining and Using Classes {ignore=True}
+# Lec.2 - Defining and Using Classes
 
 ## Compilation
 
@@ -166,7 +165,7 @@ To run,
 bark!
 ```
 
-### Instantiating
+### Instantiating {ignore=True .ignorenumbering}
 
 - Classes can contain not just methods, but also data
 - Classes can be instantiated as objects
@@ -205,7 +204,7 @@ public class DogLauncher {
 }
 ```
 
-### Terminology
+### Terminology {ignore=True .ignorenumbering}
 
 > Dog.java
 - `public int weightInPounds;`: **Instance variable**
@@ -247,7 +246,7 @@ Key differences between static and non-static (a.k.a. instance) method
 - Instance methods are invoked using an instance name: `d.makeNoise();`
 
 
-### Why Static Methods ?
+### Why Static Methods ? {ignore=True .ignorenumbering}
 
 - Some classes are *never* instantiated. 
     - e.g. `x = Math.round(5.6);`
