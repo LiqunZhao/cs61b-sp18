@@ -11,11 +11,11 @@ public class IntList {
     /**
      * First element of list.
      */
-    private int first;
+    int first;
     /**
      * Remaining elements of list.
      */
-    private IntList rest;
+    IntList rest;
 
     /**
      * A List with first FIRST0 and rest REST0.
