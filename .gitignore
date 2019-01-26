@@ -1,3 +1,7 @@
+assets/
+notes/
+assets/**
+notes/**
 **/.idea/**
 *.iml
 **/out/**

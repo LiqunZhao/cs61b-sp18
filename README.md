@@ -13,12 +13,12 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 ## TODOs
   
   
-- [x] Week 1
-    * [x] [note](./notes/week1.md ): Lec.1, Lec.2
+- [x] Week 1: Lec.1, Lec.2
+    * [x] notes
     * [x] [lab1](./lab1 )
     * [x] hw0
-- [x] Week 2
-    * [x] [note](./notes/week2.md ): Lec.3, Lec.4, Lec.5
+- [x] Week 2: Lec.3, Lec.4, Lec.5
+    * [x] note
     * [x] [lab2](./lab2 )
     * [x] [proj0](./proj0 )
   
@@ -31,7 +31,7 @@ Beyond of all, I really, really appreciate this great learning-materials is made
 - [proj0](./proj0 ): Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java ) could not be compiled on my environment
     - Fix: [`94c2ade`](https://github.com/aviatesk/cs61b-sp18/commit/94c2adea81ea826b103303e4285a62a2ff790615 )
   
-> \> javac NBody.java    
+> \> javac NBody.java
   
 ```
 .\StdDraw.java:299: error: unmappable character (0x92) for encoding windows-31j
@@ -75,8 +75,8 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
   
   
 - Course web-page: https://sp18.datastructur.es/index.html
-- The repository is originally cloned from: https://github.com/Berkeley-CS61B/skeleton-sp18
-- Auto-grader{>> is at<<}: https://www.gradescope.com/
+- The original *skeleton* repository: https://github.com/Berkeley-CS61B/skeleton-sp18
+- Auto-grader: https://www.gradescope.com/
   
   
   
