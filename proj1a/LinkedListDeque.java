@@ -1,11 +1,8 @@
 /**
- * Linked-list based double ended queue,
- * which accepts generic types.
- * All the method should follow "Deque API" described in
- * https://sp18.datastructur.es/materials/proj/proj1a/proj1a, and the rules in specified in
- * https://sp18.datastructur.es/materials/proj/proj1a/proj1a#1-linked-list-deque
- * especially for this class.
- * @Rule: The amount memory that this program uses at any given time must be
+ * Linked-list based double ended queue, which accepts generic types.
+ * @Rule: All the method should follow "Deque API" described in
+ *  https://sp18.datastructur.es/materials/proj/proj1a/proj1a#the-deque-api
+ * @Rule: The amount of memory that this program uses at any given time must be
  *  proportional to the number of items.
  */
 public class LinkedListDeque<T> {
@@ -33,32 +30,11 @@ public class LinkedListDeque<T> {
         size = 0;
     }
 
-    /** Adds an item of type T to the front of the deque.
-     * @Rule: A single operation should be executed in constant time.
-     * */
-    public void addFirst(T item) {
-        sentinel.next = new Node(item, sentinel, sentinel.next);
-        sentinel.next.next.prev = sentinel.next;
-        size += 1;
-        return;
-    }
-
-    /** Adds an item of type T to the back of the deque
-     * @Rule: A single operation should be executed in constant time.
-     * */
-    public void addLast(T item) {
-        sentinel.prev = new Node(item, sentinel.prev, sentinel);
-        sentinel.prev.prev.next = sentinel.prev;
-        size += 1;
-        return;
-    }
-
     /** Returns true if deque is empty, false otherwise */
     public boolean isEmpty() {
         if (sentinel.next == sentinel && sentinel.prev == sentinel && size == 0) {
             return true;
         }
-
         return false;
     }
 
@@ -75,7 +51,24 @@ public class LinkedListDeque<T> {
             currentNode = currentNode.next;
         }
         System.out.println();
-        return;
+    }
+
+    /** Adds an item of type T to the front of the deque.
+     * @Rule: A single operation should be executed in constant time.
+     * */
+    public void addFirst(T item) {
+        sentinel.next = new Node(item, sentinel, sentinel.next);
+        sentinel.next.next.prev = sentinel.next;
+        size += 1;
+    }
+
+    /** Adds an item of type T to the back of the deque
+     * @Rule: A single operation should be executed in constant time.
+     * */
+    public void addLast(T item) {
+        sentinel.prev = new Node(item, sentinel.prev, sentinel);
+        sentinel.prev.prev.next = sentinel.prev;
+        size += 1;
     }
 
     /** Removes and returns the item at the front of the deque. If no such item exists, returns null
@@ -108,21 +101,13 @@ public class LinkedListDeque<T> {
         return removed;
     }
 
-    /** Checks if special case should be applied with get methods */
-    private boolean getCheck(int index) {
-        if (isEmpty() || index >= size) {
-            return true;
-        }
-        return false;
-    }
-
     /** Gets the item at the given index, where 0 is the front, 1 is the next item,
      * and so forth. If no such items exists, returns null.
      * @Rule: not alter the deque !
      * @Rule: Must use iteration !
      */
     public T get(int index) {
-        if (getCheck(index)) {
+        if (index >= size) {
             return null;
         }
 
@@ -148,7 +133,7 @@ public class LinkedListDeque<T> {
      * @Rule: Must use recursion !
      */
     public T getRecursive(int index) {
-        if (getCheck(index)) {
+        if (index >= size) {
             return null;
         }
 
