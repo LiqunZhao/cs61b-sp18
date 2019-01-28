@@ -9,16 +9,16 @@
  */
 public class ArrayDeque<T> {
 
-    private static int initialCapacity = 8; // The stating size of array
-    private int capacity;
-    private T[] items;
-    private int nextFirst;
-    private int nextLast;
-    private int size;
+    private static int initialCapacity = 8; // The stating length of array
     private static int eFactor = 2; // Expanding factor
     private static int mCapacity = 16; // The minimum capacity for contraction resizing
     private static double mRatio = 0.25; // The minimum usage ratio before contraction
     private static int cFactor = 2; // Contracting factor
+    private int capacity; // The length of array
+    private T[] items;
+    private int nextFirst;
+    private int nextLast;
+    private int size;
 
     /** Creates an empty linked array deque */
     public ArrayDeque() {
@@ -150,8 +150,6 @@ public class ArrayDeque<T> {
 
         expand(); // Expand if array is full
     }
-
-    /**/
 
     /** Removes and returns the item at the front of the deque. If no such item exists, returns null
      * @Rule: A single operation should be executed in constant time,

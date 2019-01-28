@@ -189,7 +189,7 @@ public class ArrayDequeTest {
         assertEquals(16, q.size());
     }
 
-    /** Fill up & empty */
+    /** Multi-instantiating test */
     @Test
     public void testMulti() {
         ArrayDeque<Integer> q1 = new ArrayDeque<>();
