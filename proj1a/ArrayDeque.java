@@ -14,6 +14,8 @@ public class ArrayDeque<T> {
     private T[] items;
     private int nextFirst;
     private int nextLast;
+    private int numFirsts;      // Caching the number of element added to front so far
+    private int numLasts;       // Caching the number of element added to last so far
     private int size;
     private static int rFactor = 2; // Resizing factor
     private static int mCapacity = 16; // The minimum capacity for contraction resizing
@@ -26,6 +28,8 @@ public class ArrayDeque<T> {
         items = (T []) new Object[initialCapacity];
         nextFirst = capacity - 1;
         nextLast = 0;
+        numFirsts = 0;
+        numLasts = 0;
         size = 0;
     }
 
@@ -91,23 +95,29 @@ public class ArrayDeque<T> {
     private void resize(int newCapacity) {
         T[] newItems = (T[]) new Object[newCapacity];
 
-        int numFirsts = capacity - nextFirst - 1;
+        if (numFirsts < 0) {    // Decide copying target indices by cached number of added elements
+            numLasts += numFirsts;
+            numFirsts = 0;
+        } else if (numLasts < 0) {
+            numFirsts += numLasts;
+            numLasts = 0;
+        }
         System.arraycopy(items, capacity - numFirsts, newItems, newCapacity - numFirsts, numFirsts);
-        int numLasts = nextLast;
         System.arraycopy(items, 0, newItems, 0, numLasts);
 
         capacity = newCapacity;
         items = newItems;
         nextFirst = newCapacity - numFirsts - 1;
+        nextLast = numLasts;
     }
-    /** Checks whether arrays needs expansion, and if so, executes it. */
+    /** Checks whether the array needs expansion, and if so, executes it. */
     private void expand() {
         if (size == capacity) {
             int newCapacity = capacity * rFactor;
             resize(newCapacity);
         }
     }
-    /** Checks whether arrays needs contraction, and if so, executes it. */
+    /** Checks whether the array needs contraction, and if so, executes it. */
     private void contract() {
         double ratio = (double) size / capacity;
         if (capacity >= mCapacity && ratio < mRatio) {
@@ -122,7 +132,8 @@ public class ArrayDeque<T> {
      * */
     public void addFirst(T item) {
         items[nextFirst] = item;
-        nextFirst -= 1;
+        nextFirst = oneMinus(nextFirst);
+        numFirsts += 1;
         size += 1;
 
         expand(); // Expand if array is full
@@ -134,7 +145,8 @@ public class ArrayDeque<T> {
      * */
     public void addLast(T item) {
         items[nextLast] = item;
-        nextLast += 1;
+        nextLast = onePlus(nextLast);
+        numLasts += 1;
         size += 1;
 
         expand(); // Expand if array is full
@@ -155,6 +167,7 @@ public class ArrayDeque<T> {
         T removed = items[currentFirst];
         items[currentFirst] = null;
         nextFirst = currentFirst;
+        numFirsts -= 1;
         size -= 1;
 
         contract(); // Contract array if it only uses less than 25% of memory
@@ -175,6 +188,7 @@ public class ArrayDeque<T> {
         T removed = items[currentLast];
         items[currentLast] = null;
         nextLast = currentLast;
+        numLasts -= 1;
         size -= 1;
 
         contract(); // Contract array if it only uses less than 25% of memory

@@ -140,10 +140,11 @@ public class LinkedListDeque<T> {
         return getRecursiveHelper(sentinel.next, index);
     }
 
-    /** I used this main method while developing this class,
-     * I may have to erase this in order to pass Autograder.
+    /**
+     * @NOTE: I used this main method while developing this class, but commented out this section,
+     *  in order to satisfy The Deque API.
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         LinkedListDeque<Integer> q = new LinkedListDeque<>();
 
         System.out.println("isEmpty: " + q.isEmpty());
@@ -181,5 +182,6 @@ public class LinkedListDeque<T> {
         System.out.println("get 0th: " + q.get(0));
         System.out.println("get 1st: " + q.getRecursive(1));
         q.printDeque();
-    }
+    }*/
+
 }

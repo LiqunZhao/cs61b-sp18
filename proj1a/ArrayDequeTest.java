@@ -70,12 +70,14 @@ public class ArrayDequeTest {
         }
         assertEquals(10, q.size());
         int actualFirst = q.get(0);
+        int actualLast = q.get(9);
         assertEquals(9, actualFirst);
+        assertEquals(0, actualLast);
 
         for (int i = 10; i < 100; i++) {
             q.addLast(i);
         }
-        int actualLast = q.get(99);
+        actualLast = q.get(99);
         assertEquals(100, q.size());
         assertEquals(99, actualLast);
     }
@@ -108,6 +110,27 @@ public class ArrayDequeTest {
             assertEquals(i, removed);
 //            assertTrue(ratio >= 0.25);
         }
+    }
+
+    @Test
+    public void testAddRemove() {
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+
+        for (int i = 0; i < 5; i++) {
+            q.addFirst(i);
+        }
+        q.removeLast();
+
+        for (int i = 5; i < 10; i++) {
+            q.addFirst(i);
+        }
+        q.removeLast();
+
+        for (int i = 10; i < 15; i++) {
+            q.addLast(i);
+        }
+        q.removeLast();
+        q.removeFirst();
     }
 
 }
