@@ -1,5 +1,6 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
+import java.util.Random;
 
 /** Tests ArrayDeque class */
 public class ArrayDequeTest {
@@ -112,25 +113,62 @@ public class ArrayDequeTest {
         }
     }
 
+    /** Random test */
     @Test
-    public void testAddRemove() {
+    public void testRandom() {
         ArrayDeque<Integer> q = new ArrayDeque<>();
+        Random r = new Random();
+        int firstAdd = 1000;
+        int size1 = 0 + firstAdd;
+        int firstRemove = 900;
+        int size2 = size1 - firstRemove;
+        int secondAdd = 10000;
+        int size3 = size2 + secondAdd;
+        int secondRemove = 9000;
+        int size4 = size3 - secondRemove;
 
-        for (int i = 0; i < 5; i++) {
-            q.addFirst(i);
+        /** First test: add & remove */
+        for (int i = 0; i < firstAdd; i++) {
+            if (r.nextInt(2) < 1) {
+                q.addFirst(i);
+            } else {
+                q.addLast(i);
+            }
         }
-        q.removeLast();
+        assertEquals(size1, q.size());
+        for (int i = 0; i < firstRemove; i++) {
+            if (r.nextInt(2) < 1) {
+                q.removeFirst();
+            } else {
+                q.removeLast();
+            }
+        }
+        assertEquals(size2, q.size());
 
-        for (int i = 5; i < 10; i++) {
-            q.addFirst(i);
+        /** Second test: add & remove & get */
+        int first = 0;
+        int last = 0;
+        int removed = 0;
+        for (int i = 0; i < secondAdd; i++) {
+            if (r.nextInt(2) < 1) {
+                q.addFirst(i);
+            } else {
+                q.addLast(i);
+            }
         }
-        q.removeLast();
-
-        for (int i = 10; i < 15; i++) {
-            q.addLast(i);
+        assertEquals(size3, q.size());
+        for (int i = 0; i < secondRemove; i++) {
+            if (r.nextInt(2) < 1) {
+                first = q.get(0);
+                removed = q.removeFirst();
+                assertEquals(first, removed);
+            } else {
+                last = q.get(size3 - i - 1);
+                removed = q.removeLast();
+                assertEquals(last, removed);
+            }
         }
-        q.removeLast();
-        q.removeFirst();
+        assertEquals(size4, q.size());
     }
 
 }
