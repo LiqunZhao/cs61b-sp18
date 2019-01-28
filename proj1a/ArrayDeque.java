@@ -96,11 +96,10 @@ public class ArrayDeque<T> {
 
         if (currentFirst < currentLast) {
             int length = currentLast - currentFirst + 1;
-            System.arraycopy(items, currentFirst, newItems, currentFirst, length);
+            System.arraycopy(items, currentFirst, newItems, 0, length);
             nextFirst = newCapacity - 1;
             nextLast = length;
-        }
-        else {
+        } else {
             int lengthFirsts = capacity - currentFirst;
             int newCurrentFirst = newCapacity - lengthFirsts;
             int lengthLasts = nextLast;

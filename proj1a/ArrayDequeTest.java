@@ -171,4 +171,48 @@ public class ArrayDequeTest {
         assertEquals(size4, q.size());
     }
 
+    /** Fill up & empty */
+    @Test
+    public void testFill() {
+        ArrayDeque<Integer> q = new ArrayDeque<>();
+        for (int i = 0; i < 8; i++) {
+            q.addFirst(i);
+        }
+        for (int i = 0; i < 8; i++) {
+            int removed = q.removeFirst();
+            assertEquals(7 - i, removed);
+        }
+        assertEquals(0, q.size());
+        for (int i = 0; i < 16; i++) {
+            q.addFirst(i);
+        }
+        assertEquals(16, q.size());
+    }
+
+    /** Fill up & empty */
+    @Test
+    public void testMulti() {
+        ArrayDeque<Integer> q1 = new ArrayDeque<>();
+        ArrayDeque<Integer> q2 = new ArrayDeque<>();
+
+        for (int i = 0; i < 8; i++) {
+            q1.addFirst(i);
+            q2.addLast(i);
+        }
+        for (int i = 0; i < 8; i++) {
+            int removed1 = q1.removeFirst();
+            int removed2 = q2.removeLast();
+            assertEquals(7 - i, removed1);
+            assertEquals(7 - i, removed2);
+        }
+        assertEquals(0, q1.size());
+        assertEquals(0, q2.size());
+        for (int i = 0; i < 16; i++) {
+            q1.addFirst(i);
+            q2.addLast(i);
+        }
+        assertEquals(16, q1.size());
+        assertEquals(16, q2.size());
+    }
+
 }
