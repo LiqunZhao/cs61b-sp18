@@ -1,28 +1,35 @@
   
   
   
+  
 # cs61b-sp18 - aviatesk
   
   
 This repository is for [aviatesk]'s self-learning of algorithms and data structure with the materials for [CS61B], taught at UC Berkeley in Spring 2018 by Josh Hug.
   
-Beyond of all, I really, really appreciate this great learning-materials is made public, and want to say the infinite thanks to the instructor Josh and everyone who contributed to his lecture.
-  
+Beyond of all, I really, really appreciate this great learning-materials are made public, and want to say an infinite thanks to the instructor Josh and everyone who contributed to his lectures.
   
   
 ## TODOs
   
   
 - [x] Week 1: Lec.1, Lec.2
-    * [x] notes
-    * [x] [lab1](./lab1 )
-    * [x] hw0
+    * [x] Note
+    * [x] [Lab 1](./lab1 )
+    * [x] HW.0
 - [x] Week 2: Lec.3, Lec.4, Lec.5
-    * [x] note
-    * [x] [lab2](./lab2 )
-    * [x] [proj0](./proj0 )
-  
-  
+    * [x] Note
+    * [x] [Lab 2](./lab2 )
+    * [x] [Project 0](./proj0 )
+- [x] Week 3: Lec.6, Lec.7, Lec.8
+    * [x] Note
+    * [x] [Lab 3](./lab3 ): Implementing `reverse` method correctly remaining
+    * [x] [Project 1A](./proj1a )
+- [ ] Week 4
+    * [ ] Note
+    * [ ] [Lab 4](./lab4 )
+    * [ ] [Project 1B](./proj1b )
+    * [ ] [Project 1 Gold](./proj1b )
   
   
 ## Bugs and fix
@@ -58,7 +65,6 @@ Note: Recompile with -Xlint:deprecation for details.
 6 errors
 ```
   
-  
 ### Java versions (on Windows 10)
   
   
@@ -76,15 +82,13 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
   
 - Course web-page: https://sp18.datastructur.es/index.html
 - The original *skeleton* repository: https://github.com/Berkeley-CS61B/skeleton-sp18
-- Auto-grader: https://www.gradescope.com/
-  
+- Autograder: https://www.gradescope.com/
   
   
 ## Who I am
   
   
 **KADOWAKI, Shuhei** - *Undergraduate@Kyoto Univ.* - [aviatesk]
-  
   
   
   
