@@ -20,6 +20,7 @@ public class TestOffByOne {
     public void testEqualsCharFalse() {
         assertFalse(offByOne.equalChars('a', 'e'));
         assertFalse(offByOne.equalChars('z', 'a'));
+        assertFalse(offByOne.equalChars('a', 'A'));
         assertFalse(offByOne.equalChars('A', 'Z'));
         assertFalse(offByOne.equalChars('a', 'a'));
     }
