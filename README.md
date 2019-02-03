@@ -15,21 +15,25 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
   
 - [x] Week 1: Lec.1, Lec.2
     * [x] Note
-    * [x] [Lab 1](./lab1 )
+    * [x] [Lab.1](./lab1 )
     * [x] HW.0
 - [x] Week 2: Lec.3, Lec.4, Lec.5
     * [x] Note
-    * [x] [Lab 2](./lab2 )
-    * [x] [Project 0](./proj0 )
+    * [x] [Lab.2](./lab2 )
+    * [x] [Project.0](./proj0 )
 - [x] Week 3: Lec.6, Lec.7, Lec.8
     * [x] Note
-    * [x] [Lab 3](./lab3 ): Implementing `reverse` method correctly remaining
-    * [x] [Project 1A](./proj1a )
-- [ ] Week 4
+    * [x] [Lab.3](./lab3 ): Implementing `reverse` method correctly remaining
+    * [x] [Project.1A](./proj1a )
+- [x] Week 4: Lec.9, Lec.10, Lec.11
+    * [x] Note
+    * Lab 4: Not available for ppl alone ...
+    * [x] [Project.1B](./proj1b )
+    * [x] [Project.1Gold](./proj1b )
+- [ ] Week 5:
     * [ ] Note
-    * [ ] [Lab 4](./lab4 )
-    * [ ] [Project 1B](./proj1b )
-    * [ ] [Project 1 Gold](./proj1b )
+    * [ ] Lab.5
+    * [ ] HW.1
   
   
 ## Bugs and fix
@@ -77,7 +81,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
 ```
   
   
-## References
+## Links
   
   
 - Course web-page: https://sp18.datastructur.es/index.html
