@@ -18,6 +18,7 @@ import java.io.InputStream;
  * @author Eli Lipsitz
  */
 public class GuitarPlayer {
+
     private Sequence sequence = null;
     private GuitarString[] strings;
     private double[] vol;
@@ -142,4 +143,5 @@ public class GuitarPlayer {
 
         System.out.println("please clap");
     }
+
 }
