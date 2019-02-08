@@ -14,26 +14,30 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
   
   
 - [x] Week 1: Lec.1, Lec.2
-    * [x] Note
-    * [x] [Lab.1](./lab1 )
-    * [x] HW.0
+    * [x] note
+    * [x] [lab1](./lab1 )
+    * [x] hw0
 - [x] Week 2: Lec.3, Lec.4, Lec.5
-    * [x] Note
-    * [x] [Lab.2](./lab2 )
-    * [x] [Project.0](./proj0 )
+    * [x] note
+    * [x] [lab2](./lab2 )
+    * [x] [proj0](./proj0 )
 - [x] Week 3: Lec.6, Lec.7, Lec.8
-    * [x] Note
-    * [x] [Lab.3](./lab3 ): Implementing `reverse` method correctly remaining
-    * [x] [Project.1A](./proj1a )
+    * [x] note
+    * [x] [lab3](./lab3 ): Implementing `reverse` method correctly remaining
+    * [x] [proj1a](./proj1a )
 - [x] Week 4: Lec.9, Lec.10, Lec.11
-    * [x] Note
-    * Lab 4: Not available for ppl alone ...
-    * [x] [Project.1B](./proj1b )
-    * [x] [Project.1Gold](./proj1b )
-- [ ] Week 5:
-    * [ ] Note
-    * [ ] Lab.5
-    * [ ] HW.1
+    * [x] note
+    * lab4: Not available for ppl alone ...
+    * [x] [proj1b](./proj1b )
+    * [x] [proj1glod](./proj1gold )
+- [x] Week 5: Lec.13, Lec.14
+    * [x] note
+    * [x] lab5
+    * [x] [hw1](./hw1 )
+- [ ] Week 6:
+    * [ ] note
+    * [ ] lab6
+    * [ ] proj2, phase1
   
   
 ## Bugs and fix
