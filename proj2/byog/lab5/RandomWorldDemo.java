@@ -18,9 +18,10 @@ public class RandomWorldDemo {
 
     /**
      * Fills the given 2D array of tiles with RANDOM tiles.
+     *
      * @param tiles
      */
-    public static void fillWithRandomTiles(TETile[][] tiles) {
+    private static void fillWithRandomTiles(TETile[][] tiles) {
         int height = tiles[0].length;
         int width = tiles.length;
         for (int x = 0; x < width; x += 1) {
@@ -30,17 +31,22 @@ public class RandomWorldDemo {
         }
     }
 
-    /** Picks a RANDOM tile with a 33% change of being
-     *  a wall, 33% chance of being a flower, and 33%
-     *  chance of being empty space.
+    /**
+     * Picks a RANDOM tile with a 33% change of being
+     * a wall, 33% chance of being a flower, and 33%
+     * chance of being empty space.
      */
     private static TETile randomTile() {
         int tileNum = RANDOM.nextInt(3);
         switch (tileNum) {
-            case 0: return Tileset.WALL;
-            case 1: return Tileset.FLOWER;
-            case 2: return Tileset.NOTHING;
-            default: return Tileset.NOTHING;
+            case 0:
+                return Tileset.WALL;
+            case 1:
+                return Tileset.FLOWER;
+            case 2:
+                return Tileset.NOTHING;
+            default:
+                return Tileset.NOTHING;
         }
     }
 
