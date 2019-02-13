@@ -133,7 +133,7 @@ public class Game {
     /**
      * Method used for playing a fresh game. The game should start from the main menu.
      */
-    void playWithKeyboard() {
+    public void playWithKeyboard() {
 
     }
 
@@ -150,7 +150,7 @@ public class Game {
      * @param input the input string to feed to your program
      * @return the 2D TETile[][] representing the state of the world
      */
-    TETile[][] playWithInputString(String input) {
+    public TETile[][] playWithInputString(String input) {
 
         ter.initialize(WIDTH, HEIGHT);
         processInput(input);
