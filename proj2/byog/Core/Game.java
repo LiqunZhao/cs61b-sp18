@@ -152,9 +152,7 @@ public class Game {
      */
     public TETile[][] playWithInputString(String input) {
 
-        ter.initialize(WIDTH, HEIGHT);
         processInput(input);
-        ter.renderFrame(world);
         return world;
 
     }
@@ -165,7 +163,9 @@ public class Game {
 
         Game game = new Game();
         String input = "N42S";
-        game.playWithInputString(input);
+        TETile[][] world = game.playWithInputString(input);
+        game.ter.initialize(WIDTH, HEIGHT);
+        game.ter.renderFrame(world);
 
     }
 
