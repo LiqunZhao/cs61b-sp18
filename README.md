@@ -10,34 +10,69 @@ This repository is for [aviatesk]'s self-learning of algorithms and data structu
 Beyond of all, I really, really appreciate this great learning-materials are made public, and want to say an infinite thanks to the instructor Josh and everyone who contributed to his lectures.
   
   
-## TODOs
+## Archives
   
   
-- [x] Week 1: Lec.1, Lec.2
-    * [x] note
-    * [x] [lab1](./lab1 )
-    * [x] hw0
-- [x] Week 2: Lec.3, Lec.4, Lec.5
-    * [x] note
-    * [x] [lab2](./lab2 )
-    * [x] [proj0](./proj0 )
-- [x] Week 3: Lec.6, Lec.7, Lec.8
-    * [x] note
-    * [x] [lab3](./lab3 ): Implementing `reverse` method correctly remaining
-    * [x] [proj1a](./proj1a )
-- [x] Week 4: Lec.9, Lec.10, Lec.11
-    * [x] note
+- Week 1
+    * [x] [note](./notes/week1.md )
+        + [x] Lec.1: Intro to Java, Static Typing
+        + [x] Lec.2: Class
+    * [ ] disc1
+    * [x] [lab1](./lab1 ): javac, java, git (More Git details: [Using Git](https://sp18.datastructur.es/materials/guides/using-git.html ))
+    * [x] [hw0](https://sp18.datastructur.es/materials/hw/hw0/hw0 ): Basic Java Syntaxes
+- Week 2
+    * [x] [note](./notes/week2.md )
+        + [x] Lec.3: References
+        + [x] Lec.4: Node Based List, Nested Class, Caching, Sentinel
+        + [x] Lec.5: Generics, Array
+    * [ ] disc2
+    * [ ] examprep2
+    * [x] [lab2setup](./lab2setup ): Create Projects or import libraries within IntelliJ (Link: [Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup ))
+    * [x] [lab2](./lab2 ): Debugger, JUnit Test
+    * [x] [proj0](./proj0 ): Just Fun with Java
+- Week 3
+    * [x] [note](./notes/week3.md )
+        + Lec.6: Array-based List
+        + Lec.7: Testing
+        + Lec.8: Interface, Implementation Inheritance, Dynamic Method Selection
+    * [x] [disc3](https://sp18.datastructur.es/materials/discussion/disc03sol.pdf ): Linked List, Array
+    * [ ] examprep3
+    * [ ] [lab3](./lab3 ): Debugger, JUnit Test (**Implementing `reverse` method correctly remaining**)
+    * [x] [proj1a](./proj1a ): Doubly-linked List, Doubly-linked Array
+- Week 4
+    * [x] [note](./notes/week4.md )
+        + Lec.9: Implementation Inheritance, Encapsulation, Type Checking, Higher Order Function
+        + Lec.10: Subtype Polymorphism
+        + Lec.11: Libraries
+    * [x] [disc4](https://sp18.datastructur.es/materials/discussion/disc04sol.pdf ): Inheritance
+    * [ ] examprep4
     * lab4: Not available for ppl alone ...
-    * [x] [proj1b](./proj1b )
-    * [x] [proj1glod](./proj1gold )
-- [x] Week 5: Lec.13, Lec.14
-    * [x] note
-    * [x] lab5
-    * [x] [hw1](./hw1 )
-- [ ] Week 6:
+    * [x] [proj1b](./proj1b ): Test Driven Development
+    * [x] [proj1glod](./proj1gold ): Randomized Tests
+- Week 5
+    * [x] [note](./notes/week5.md )
+        + Lec.13: Conversion, Immutability, Generics
+        + Lec.14: Exception, `Iterator`
+    * [x] [lab5](./proj2/byog/lab5 ): Pseudo random number, TILE Engine
+    * [x] [disc5](https://sp18.datastructur.es/materials/discussion/disc05sol.pdf ): ADTs
+    * [x] [examprep5](https://sp18.datastructur.es/materials/discussion/examprep05sol.pdf ): Mutant ADTs
+    * [x] [hw1](./hw1 ): Package, Interface, Generics, Exception, Iteration
+- Week 6
+    * [x] [note](./notes/week6.md )
+        + Lec.15: Package, Access Control, `Object` method
+        + Lec.16: Programming Efficiency, API design, Views (No note but the slides available at [link](https://docs.google.com/presentation/d/1__Akx5EBZe7sMyCYBN1uToKkhrRuxi0mtxSj1DjU51M/edit?usp=sharing ))
+    * [x] [lab6](./proj2/byog/lab6 ): Interactivity within [StdDraw](https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html )
+    * [x] [disc6](https://sp18.datastructur.es/materials/discussion/disc06sol.pdf ): Selecting ADTs
+    * [x] [examprep6](https://sp18.datastructur.es/materials/discussion/examprep06sol.pdf ): Exception, Linked List
+    * [x] [proj2 phase1](./proj2/byog/Core ): Large scale programming, Generative program using pseudo random number
+- Week 7:
     * [ ] note
-    * [ ] lab6
-    * [ ] proj2, phase1
+        + Lec.17
+        + Lec.18
+        + Lec.19
+    * [ ] disc7
+    * [ ] examprep7
+    * [ ] proj2 phase2
   
   
 ## Bugs and fix
