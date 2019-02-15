@@ -29,7 +29,7 @@ public class Game {
     private static final String EAST = "d";
     private static final String SOUTH = "s";
     private static final String WEST = "a";
-    private static final String PATH = "./.world.ser";
+    private static final String PATH = "saved.txt";
     private static final int WELCOMEWIDTH = 600;
     private static final int WELCOMEHEIGHT = 800;
 

@@ -2,13 +2,14 @@ assets/
 notes/
 assets/**
 notes/**
-proj2/.world.ser
 **/.idea/**
 *.iml
 **/out/**
 !*/
 !**.java
 !**.txt
+proj2/saved.txt
+proj2/out/production/proj2/saved.txt
 !**.json
 !.expelimicate
 !.gitignore
