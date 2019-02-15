@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import java.awt.Color;
 import java.awt.Font;
 
 import byog.TileEngine.TERenderer;
@@ -33,8 +32,6 @@ public class Game {
     private static final String PATH = "./.world.ser";
     private static final int WELCOMEWIDTH = 600;
     private static final int WELCOMEHEIGHT = 800;
-    private static final Color FOREGROUND = StdDraw.WHITE;
-    private static final Color BACKGROUND = StdDraw.BLACK;
 
 
     /// Instance members
@@ -271,7 +268,7 @@ public class Game {
         // prepare welcome board window
         StdDraw.enableDoubleBuffering();
         StdDraw.setCanvasSize(WELCOMEWIDTH, WELCOMEHEIGHT);
-        StdDraw.clear(BACKGROUND);
+        StdDraw.clear(StdDraw.BLACK);
 
         while (true) {
             if (StdDraw.hasNextKeyTyped()) {
@@ -291,11 +288,11 @@ public class Game {
 
     /* Renders welcome board in setupMode */
     private void renderWelcomeBoard() {
-        StdDraw.clear(BACKGROUND);
+        StdDraw.clear(StdDraw.BLACK);
+        StdDraw.setPenColor(StdDraw.WHITE);
 
         // title
         StdDraw.setFont(new Font("Arial", Font.BOLD, 40));
-        StdDraw.setPenColor(FOREGROUND);
         StdDraw.text(0.5, 0.8, "CS61B: BYoG");
 
         // menu
@@ -350,7 +347,7 @@ public class Game {
 
         // draw as text
         StdDraw.setFont(new Font("Arial", Font.PLAIN, 15));
-        StdDraw.setPenColor(FOREGROUND);
+        StdDraw.setPenColor(StdDraw.WHITE);
         StdDraw.textLeft(1, HEIGHT - 1, mouseTile.description());
         StdDraw.show();
     }

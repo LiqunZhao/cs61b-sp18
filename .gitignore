@@ -2,6 +2,7 @@ assets/
 notes/
 assets/**
 notes/**
+proj2/.world.ser
 **/.idea/**
 *.iml
 **/out/**
