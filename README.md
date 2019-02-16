@@ -16,7 +16,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
 - Week 1
     * [x] [note](./notes/week1.md )
         + [x] Lec.1: Intro to Java, Static Typing
-        + [x] Lec.2: Class
+        + [x] Lec.2: Classes
     * [ ] disc1
     * [x] [lab1](./lab1 ): javac, java, git (More Git details: [Using Git](https://sp18.datastructur.es/materials/guides/using-git.html ))
     * [x] [hw0](https://sp18.datastructur.es/materials/hw/hw0/hw0 ): Basic Java Syntaxes
@@ -53,26 +53,34 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
     * [x] [note](./notes/week5.md )
         + Lec.13: Conversion, Immutability, Generics
         + Lec.14: Exception, `Iterator`
-    * [x] [lab5](./proj2/byog/lab5 ): Pseudo random number, TILE Engine
+    * [x] [lab5](./proj2/byog/lab5 ): Pseudo random number, [Tile Rendering Engine](https://sp18.datastructur.es/materials/lab/lab5/lab5 )
     * [x] [disc5](https://sp18.datastructur.es/materials/discussion/disc05sol.pdf ): ADTs
-    * [x] [examprep5](https://sp18.datastructur.es/materials/discussion/examprep05sol.pdf ): Mutant ADTs
+    * [x] [examprep5](https://sp18.datastructur.es/materials/discussion/examprep05sol.pdf ): Using ADTs
     * [x] [hw1](./hw1 ): Package, Interface, Generics, Exception, Iteration
 - Week 6
     * [x] [note](./notes/week6.md )
         + Lec.15: Package, Access Control, `Object` method
         + Lec.16: Programming Efficiency, API design, Views (No note but the slides available at [link](https://docs.google.com/presentation/d/1__Akx5EBZe7sMyCYBN1uToKkhrRuxi0mtxSj1DjU51M/edit?usp=sharing ))
     * [x] [lab6](./proj2/byog/lab6 ): Interactivity within [StdDraw](https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html )
-    * [x] [disc6](https://sp18.datastructur.es/materials/discussion/disc06sol.pdf ): Selecting ADTs
+    * [x] [disc6](https://sp18.datastructur.es/materials/discussion/disc06sol.pdf ): Access Control, Designing API
     * [x] [examprep6](https://sp18.datastructur.es/materials/discussion/examprep06sol.pdf ): Exception, Linked List
     * [x] [proj2 phase1](./proj2/byog/Core ): Large scale programming, Generative program using pseudo random number
-- Week 7:
+- Week 7
+    * [x] [note](./notes/week7.md )
+        + Lec.17: Introduction to Asymptotic Analysis, Big Theta
+        + Lec.18: 5 Basic Case Studies of Asymptotic Analysis
+        + Lec.19: Big O, Big Omega, Amortized Analysis
+    * [x] [disc7](https://sp18.datastructur.es/materials/discussion/disc07sol.pdf ): Asymptotic Analysis Examples, Using ADTs
+    * [x] [examprep7](https://sp18.datastructur.es/materials/discussion/examprep07sol.pdf ): (A bit exam-flavored) Problems
+    * [x] [proj2 phase2](./proj2/ ): UI Design, Serialization
+- Week8
     * [ ] note
-        + Lec.17
-        + Lec.18
-        + Lec.19
-    * [ ] disc7
-    * [ ] examprep7
-    * [ ] proj2 phase2
+        + Lec.20:
+        + Lec.21:
+        + Lec.22:
+    * [ ] disc8
+    * [ ] examprep8
+    * [ ] hw2
   
   
 ## Bugs and fix
@@ -124,7 +132,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
   
   
 - Course web-page: https://sp18.datastructur.es/index.html
-- The original *skeleton* repository: https://github.com/Berkeley-CS61B/skeleton-sp18
+- The original cloned *skeleton* repository: https://github.com/Berkeley-CS61B/skeleton-sp18
 - Autograder: https://www.gradescope.com/
   
   
