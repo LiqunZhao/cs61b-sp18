@@ -73,14 +73,23 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
     * [x] [disc7](https://sp18.datastructur.es/materials/discussion/disc07sol.pdf ): Asymptotic Analysis Examples, Using ADTs
     * [x] [examprep7](https://sp18.datastructur.es/materials/discussion/examprep07sol.pdf ): (A bit exam-flavored) Problems
     * [x] [proj2 phase2](./proj2/ ): UI Design, Serialization
-- Week8
+- Week 8
+    * [x] [note](./notes/week8.md )
+        + Lec.20: Disjoint Set
+        + Lec.21: Binary Search Tree Basics
+        + Lec.22: Tree Rotation, B-Tree, LLRB
+    * [x] disc8: AA of Pseudo Code, Mathematical Discussion of AA
+    * [x] examprep8: AA of Pseudo Code
+    * [x] hw2: Percolation Simulation with Disjoint Set
+- Week 9
     * [ ] note
-        + Lec.20:
-        + Lec.21:
-        + Lec.22:
-    * [ ] disc8
-    * [ ] examprep8
-    * [ ] hw2
+        + Lec.23
+        + Lec.24
+        + Lec.25
+    * [ ] disc9
+    * [ ] examprep9
+    * [ ] lab9
+    * [ ] hw3
   
   
 ## Bugs and fix
