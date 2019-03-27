@@ -1,13 +1,16 @@
 package hw3.hash;
 
 import org.junit.Test;
+
 import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 import java.util.ArrayList;
+
 import edu.princeton.cs.algs4.StdRandom;
 
 public class TestNiceSpreadOomage {
+
     private static class NiceSpreadOomage implements Oomage {
         private int val;
 
@@ -29,8 +32,10 @@ public class TestNiceSpreadOomage {
 
     }
 
-    /** After you've written haveNiceHashCodeSpread,
-     * run this and it should pass.*/
+    /**
+     * After you've written haveNiceHashCodeSpread,
+     * run this and it should pass.
+     */
     @Test
     public void testRandomOomagesHashCodeSpread() {
         List<Oomage> oomages = new ArrayList<>();
@@ -42,4 +47,5 @@ public class TestNiceSpreadOomage {
 
         assertTrue(OomageTestUtility.haveNiceHashCodeSpread(oomages, 10));
     }
+
 }

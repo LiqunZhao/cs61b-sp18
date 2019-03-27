@@ -1,19 +1,41 @@
 package hw3.hash;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import edu.princeton.cs.algs4.StdDraw;
+
 import java.awt.Color;
+
 import edu.princeton.cs.algs4.StdRandom;
 
 public class ComplexOomage implements Oomage {
+
     protected List<Integer> params;
     private static final double WIDTH = 0.05;
+
+    private void validate(Integer param) {
+        if (param == null || param < 0 || param > 255) {
+            throw new IllegalArgumentException(param + " must be between 0 and 255.");
+        }
+    }
+
+    public ComplexOomage(List<Integer> params) {
+        if (params == null) {
+            throw new IllegalArgumentException("params must not be null!");
+        }
+
+        for (Integer x : params) {
+            validate(x);
+        }
+        this.params = new ArrayList<>(params);
+    }
 
     @Override
     public int hashCode() {
         int total = 0;
         for (int x : params) {
-            total = total * 256;
+            total = total * 256; // Changing `256` to `257` will fix the problem
             total = total + x;
         }
         return total;
@@ -26,23 +48,6 @@ public class ComplexOomage implements Oomage {
         }
         ComplexOomage otherComplexOomage = (ComplexOomage) o;
         return params.equals(otherComplexOomage.params);
-    }
-
-    public ComplexOomage(List<Integer> params) {
-        if (params == null) {
-            throw new IllegalArgumentException("params must not be null!");            
-        }
-
-        for (Integer x : params) {
-            validate(x);
-        }
-        this.params = new ArrayList<>(params);
-    }
-
-    private void validate(Integer param) {
-        if (param == null || param < 0 || param > 255) {
-            throw new IllegalArgumentException(param + " must be between 0 and 255.");
-        }
     }
 
     /* Draws this ComplexOomage. */
@@ -87,4 +92,5 @@ public class ComplexOomage implements Oomage {
         randomComplexOomage().draw(0.25, 0.75, 1.5);
         randomComplexOomage().draw(0.75, 0.25, 1.5);
     }
+
 } 
