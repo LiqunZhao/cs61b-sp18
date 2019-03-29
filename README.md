@@ -33,7 +33,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
         + Lec.8: Interface, Implementation Inheritance, Dynamic Method Selection
     * [x] [disc3](./discs/disc03sol.pdf): Linked List, Array
     * [ ] [examprep3](./exampreps/examprep03sol.pdf)
-    * [ ] [lab3](./lab3/): Debugger, JUnit Test (**Implementing `reverse` method correctly remaining**)
+    * [ ] [lab3](./lab3/): Debugger, JUnit Test (**TODO: Implementing `reverse` method correctly remaining**)
     * [x] [proj1a](./proj1a/): Doubly-linked List, Doubly-linked Array
 - Week 4
     * [x] [note](./notes/week4.md)
@@ -100,7 +100,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
         + Lec.31
     * [ ] disc11
     * [ ] examprep11
-    * [ ] lab11
+    * [ ] [lab11](./lab11/lab11/graphs/): BFS, Cycle Check, A* (**TODO: Completing [MazeAStarPath.java](./lab11/lab11/graphs/MazeAStarPath.java) remaining**)
     * [ ] hw4
 
 

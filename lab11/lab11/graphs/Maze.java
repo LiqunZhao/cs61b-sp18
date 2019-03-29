@@ -474,5 +474,6 @@ public class Maze implements Observer {
     private boolean[][] west;
     private static Random rgen;
     private static int DRAW_DELAY_MS = 50;
+
 }
 

@@ -1,9 +1,10 @@
 package lab11.graphs;
 
 /**
- *  @author Josh Hug
+ * @author Josh Hug
  */
 public class AStarDemo {
+
     /* Runs an A* from (1, 1) to (N, N) on the graph in the config file. */
 
     public static void main(String[] args) {

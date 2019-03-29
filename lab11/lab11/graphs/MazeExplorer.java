@@ -6,19 +6,11 @@ import java.util.Observable;
  * @author Josh Hug
  */
 public abstract class MazeExplorer extends Observable {
-    protected int[] distTo;
-    protected int[] edgeTo;
-    protected boolean[] marked;
+
+    int[] distTo;
+    int[] edgeTo;
+    boolean[] marked;
     protected Maze maze;
-
-
-    /**
-     * Notify all Observers of a change.
-     */
-    protected void announce() {
-        setChanged();
-        notifyObservers();
-    }
 
     public MazeExplorer(Maze m) {
         maze = m;
@@ -34,6 +26,14 @@ public abstract class MazeExplorer extends Observable {
     }
 
     /**
+     * Notify all Observers of a change.
+     */
+    protected void announce() {
+        setChanged();
+        notifyObservers();
+    }
+
+    /**
      * Solves the maze, modifying distTo and edgeTo as it goes.
      */
     public abstract void solve();
@@ -46,4 +46,5 @@ public abstract class MazeExplorer extends Observable {
     public int[] getEdgeTo() {
         return edgeTo;
     }
+
 }
