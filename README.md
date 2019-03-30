@@ -21,7 +21,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
         + [x] Lec.3: References
         + [x] Lec.4: Node Based List, Nested Class, Caching, Sentinel
         + [x] Lec.5: Generics, Array
-    * [ ] [disc2](./discs/disc02sol.pdf)
+    * [x] [disc2](./discs/disc02sol.pdf): Pointer, Naked Linked List (Squaring)
     * [ ] [examprep2](./exampreps/examprep02sol.pdf)
     * [x] [lab2setup](./lab2setup/): Create Projects or import libraries within IntelliJ (Link: [Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup))
     * [x] [lab2](./lab2/): Debugger, JUnit Test
@@ -32,8 +32,8 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
         + Lec.7: Testing
         + Lec.8: Interface, Implementation Inheritance, Dynamic Method Selection
     * [x] [disc3](./discs/disc03sol.pdf): Linked List, Array
-    * [ ] [examprep3](./exampreps/examprep03sol.pdf)
-    * [ ] [lab3](./lab3/): Debugger, JUnit Test (**TODO: Implementing `reverse` method correctly remaining**)
+    * [x] [examprep3](./exampreps/examprep03sol.pdf): Naked Linked List (Insertion, Reversing)
+    * [x] [lab3](./lab3/): Debugger, JUnit Test, Naked Linked List
     * [x] [proj1a](./proj1a/): Doubly-linked List, Doubly-linked Array
 - Week 4
     * [x] [note](./notes/week4.md)
@@ -41,7 +41,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
         + Lec.10: Subtype Polymorphism
         + Lec.11: Libraries
     * [x] [disc4](./discs/disc04sol.pdf): Inheritance
-    * [ ] [examprep4](./exampreps/examprep04sol.pdf)
+    * [x] [examprep4](./exampreps/examprep04sol.pdf): Inheritance, Type Checking
     * lab4: Not available for ppl alone ...
     * [x] [proj1b](./proj1b/): Test Driven Development
     * [x] [proj1glod](./proj1gold/): Randomized Tests

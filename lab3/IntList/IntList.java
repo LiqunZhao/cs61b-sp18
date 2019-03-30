@@ -8,28 +8,22 @@ import java.util.Formatter;
  * [Do not modify this file.]
  */
 public class IntList {
-    /**
-     * First element of list.
-     */
-    int first;
-    /**
-     * Remaining elements of list.
-     */
-    IntList rest;
+
+    int item;                  // First element of list.
+    IntList next;               // Remaining elements of list.
 
     /**
      * A List with first FIRST0 and rest REST0.
      */
-    public IntList(int first0, IntList rest0) {
-        first = first0;
-        rest = rest0;
+    public IntList(int item, IntList next) {
+        this.item = item;
+        this.next = next;
     }
 
     /**
      * A List with null rest, and first = 0.
      */
     public IntList() {
-        /* NOTE: public IntList () { }  would also work. */
         this(0, null);
     }
 
@@ -38,8 +32,8 @@ public class IntList {
      */
     public static void dSquareList(IntList L) {
         while (L != null) {
-            L.first = L.first * L.first;
-            L = L.rest;
+            L.item = L.item * L.item;
+            L = L.next;
         }
     }
 
@@ -50,15 +44,16 @@ public class IntList {
         if (L == null) {
             return null;
         }
-        IntList res = new IntList(L.first * L.first, null);
-        IntList ptr = res;
-        L = L.rest;
+        IntList ret = new IntList(L.item * L.item, null);
+        IntList rest = ret;
+        L = L.next;
         while (L != null) {
-            ptr.rest = new IntList(L.first * L.first, null);
-            L = L.rest;
-            ptr = ptr.rest;
+            rest.next = new IntList(L.item * L.item, null);
+            rest = rest.next;
+            L = L.next;
         }
-        return res;
+
+        return ret;
     }
 
     /**
@@ -68,23 +63,20 @@ public class IntList {
         if (L == null) {
             return null;
         }
-        return new IntList(L.first * L.first, squareListRecursive(L.rest));
+        return new IntList(L.item * L.item, squareListRecursive(L.next));
     }
-
-    /** DO NOT MODIFY ANYTHING ABOVE THIS LINE! */
-
 
     /**
      * Returns a list consisting of the elements of A followed by the
      * elements of B.  May modify items of A. Don't use 'new'.
      * Using recursive structure.
      */
-    public static IntList dcatenate(IntList A, IntList B) {
+    public static IntList dCatenate(IntList A, IntList B) {
         if (A == null) {
             A = B;
             return A;
         } else {
-            A.rest = IntList.dcatenate(A.rest, B);
+            A.next = IntList.dCatenate(A.next, B);
             return A;
         }
     }
@@ -94,14 +86,13 @@ public class IntList {
      * elements of B.  May modify items of A. Don't use 'new'.
      * Using iterative structure.
      */
-    public static IntList dcatenateIterative(IntList A, IntList B) {
-        IntList res = A;
-        while (res.rest != null) {
-            res = res.rest;
-            continue;
+    public static IntList dCatenateIterative(IntList A, IntList B) {
+        IntList ret = A;
+        while (A.next != null) {
+            A = A.next;
         }
-        res.rest = B;
-        return A;
+        A.next = B;
+        return ret;
     }
 
     /**
@@ -113,7 +104,7 @@ public class IntList {
         if (A == null) {
             return B;
         } else {
-            return new IntList(A.first, catenate(A.rest, B));
+            return new IntList(A.item, catenate(A.next, B));
         }
     }
 
@@ -123,31 +114,32 @@ public class IntList {
      * Using iterative structure.
      */
     public static IntList catenateIterative(IntList A, IntList B) {
-        IntList newA = new IntList(A.first, null);
-        IntList res = newA;
-        IntList currentA = A.rest;
-        while (currentA != null) {
-            res.rest = new IntList(currentA.first, null);
-            res = res.rest;
-            currentA = currentA.rest;
+        IntList ret = new IntList(A.item, null);
+        IntList rest = ret;
+        while (A.next != null) {
+            rest.next = new IntList(A.next.item, null);
+            rest = rest.next;
+            A = A.next;
         }
-        res.rest = B;
-        return newA;
+        rest.next = B;
+        return ret;
     }
 
     /**
      * Returns the reverse of the given IntList.
      * This method is destructive. If given null as input, return null
-     * @TODO: Implement this correctly after Project 1A !!
+     *
+     * @NOTE It's not possible to make `A` after reversing reversed in an appropriated way,
+     * because this class is naked and has not pointer to the head of a list.
      */
     public static IntList reverse(IntList A) {
-        if (A == null || A.rest == null) {
+        if (A == null || A.next == null) {
             return A;
         } else {
-            IntList reversed = reverse(A.rest);
-            A.rest.rest = A;
-            A.rest = null;
-            return A;
+            IntList reversed = reverse(A.next);
+            A.next.next = A;
+            A.next = null;
+            return reversed;
         }
     }
 
@@ -160,7 +152,7 @@ public class IntList {
 
     @Override
     public int hashCode() {
-        return first;
+        return item;
     }
 
     /**
@@ -177,8 +169,8 @@ public class IntList {
         }
 
         int k;
-        for (k = 1, p = result; k < args.length; k += 1, p = p.rest) {
-            p.rest = new IntList(args[k], null);
+        for (k = 1, p = result; k < args.length; k += 1, p = p.next) {
+            p.next = new IntList(args[k], null);
         }
         return result;
     }
@@ -195,8 +187,8 @@ public class IntList {
         IntList L = (IntList) x;
         IntList p;
 
-        for (p = this; p != null && L != null; p = p.rest, L = L.rest) {
-            if (p.first != L.first) {
+        for (p = this; p != null && L != null; p = p.next, L = L.next) {
+            if (p.item != L.item) {
                 return false;
             }
         }
@@ -231,13 +223,13 @@ public class IntList {
 
         while (true) {
             cnt++;
-            if (hare.rest != null) {
-                hare = hare.rest.rest;
+            if (hare.next != null) {
+                hare = hare.next.next;
             } else {
                 return 0;
             }
 
-            tortoise = tortoise.rest;
+            tortoise = tortoise.next;
 
             if (tortoise == null || hare == null) {
                 return 0;
@@ -259,8 +251,8 @@ public class IntList {
         int cycleLocation = detectCycles(this);
         int cnt = 0;
 
-        for (IntList p = this; p != null; p = p.rest) {
-            out.format("%s%d", sep, p.first);
+        for (IntList p = this; p != null; p = p.next) {
+            out.format("%s%d", sep, p.item);
             sep = ", ";
 
             cnt++;
@@ -272,4 +264,31 @@ public class IntList {
         out.format(")");
         return out.toString();
     }
+
+    /**
+     * Given a sorted linked list of items, removes duplicates.
+     */
+    public static void removeDuplicates(IntList p) {
+        if (p == null) {
+            return;
+        }
+
+        IntList cur = p.next;
+        IntList prev = p;
+        while (cur != null) {
+            if (cur.item == prev.item) {
+                prev.next = cur.next;
+            } else {
+                prev = cur;
+            }
+            cur = cur.next;
+        }
+    }
+
+    public static void main(String[] args) {
+        IntList p = IntList.of(1, 2, 2, 2, 3, 3);
+        removeDuplicates(p);
+        System.out.println(p.toString());
+    }
+
 }

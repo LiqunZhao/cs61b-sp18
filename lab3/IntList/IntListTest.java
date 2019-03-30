@@ -20,13 +20,6 @@ public class IntListTest {
         assertEquals(threeTwoOne, x);
     }
 
-    @Test
-    public void testdSquareList() {
-        IntList L = IntList.of(1, 2, 3);
-        IntList.dSquareList(L);
-        assertEquals(IntList.of(1, 4, 9), L);
-    }
-
     /**
      * Do not use the new keyword in your tests. You can create
      * lists using the handy IntList.of method.
@@ -41,6 +34,21 @@ public class IntListTest {
      */
 
     @Test
+    public void testdSquareList() {
+        IntList L = IntList.of(1, 2, 3);
+        IntList.dSquareList(L);
+        assertEquals(IntList.of(1, 4, 9), L);
+    }
+
+    @Test
+    public void testSquareListIterative() {
+        IntList L = IntList.of(1, 2, 3);
+        IntList squared = IntList.squareListIterative(L);
+        assertEquals(IntList.of(1, 2, 3), L);
+        assertEquals(IntList.of(1, 4, 9), squared);
+    }
+
+    @Test
     public void testSquareListRecursive() {
         IntList L = IntList.of(1, 2, 3);
         IntList res = IntList.squareListRecursive(L);
@@ -49,12 +57,21 @@ public class IntListTest {
     }
 
     @Test
-    public void testDcatenate() {
+    public void testDCatenate() {
         IntList A = IntList.of(1, 2, 3);
         IntList B = IntList.of(4, 5, 6);
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
-        assertEquals(exp, IntList.dcatenate(A, B));
-        assertEquals(IntList.of(1, 2, 3, 4, 5, 6), A);
+        assertEquals(exp, IntList.dCatenate(A, B));
+        assertEquals(exp, A);
+    }
+
+    @Test
+    public void testDCatenateIterative() {
+        IntList A = IntList.of(1, 2, 3);
+        IntList B = IntList.of(4, 5, 6);
+        IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
+        assertEquals(exp, IntList.dCatenateIterative(A, B));
+        assertEquals(exp, A);
     }
 
     @Test
@@ -62,21 +79,30 @@ public class IntListTest {
         IntList A = IntList.of(1, 2, 3);
         IntList B = IntList.of(4, 5, 6);
         IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
+        IntList exp2 = IntList.of(1, 2, 3);
         assertEquals(exp, IntList.catenate(A, B));
-        assertEquals(IntList.of(1, 2, 3), A);
+        assertEquals(exp2, A);
+    }
+
+    @Test
+    public void testCatenateIterative() {
+        IntList A = IntList.of(1, 2, 3);
+        IntList B = IntList.of(4, 5, 6);
+        IntList exp = IntList.of(1, 2, 3, 4, 5, 6);
+        IntList exp2 = IntList.of(1, 2, 3);
+        assertEquals(exp, IntList.catenateIterative(A, B));
+        assertEquals(exp2, A);
     }
 
     @Test
     public void testReverse() {
         IntList A = IntList.of(1, 2, 3, 4);
-        IntList B = IntList.reverse(A);
         IntList exp = IntList.of(4, 3, 2, 1);
-        assertEquals(exp, B);
-        assertEquals(exp, A); // Check it works *destructively*
-
-        // Check reverse method can handle a null input properly
-        IntList C = IntList.reverse(null);
-        assertEquals(null, C);
+        assertEquals(exp, IntList.reverse(A));
+        /* The test below should CAUSE AN ERROR because A after reversing is going to be just (1),
+         * since `IntList` class is just naked linked-list class and has not pointer to the head of
+         * the a linked-list itself as a whole. */
+        assertEquals(exp, A);
     }
 
     /** If you're running this from the command line, you'll need
