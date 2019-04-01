@@ -7,7 +7,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
 
 ## Archives
 
-*Notes are unavailable until I finish up all the lectures...*
+_Notes are unavailable until I finish up all the lectures..._
 
 - Week 1
     * [x] [note](./notes/week1.md)
@@ -102,9 +102,17 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
     * [ ] examprep11
     * [ ] [lab11](./lab11/lab11/graphs/): BFS, Cycle Check, A* (**TODO: Completing [MazeAStarPath.java](./lab11/lab11/graphs/MazeAStarPath.java) remaining**)
     * [ ] hw4
+- Week 12
+    * [ ] note
+        + Lec.32: Basic Sorting Algorithms
+        + Lec.33: Quick Sort
+        + Lec.34
+    * [ ] disc12
+    * [ ] examprep12
+    * [x] [lab12](./lab12/): Merge/Quick Sort on Queue
 
 
-## Bugs and fix
+## Bugs and fixes
 
 - [proj0](./proj0/): Some characters in [proj0/StdDraw.java](./proj0/StdDraw.java) could not be compiled on my environment
     - Fix: [`94c2ade`](https://github.com/aviatesk/cs61b-sp18/commit/94c2adea81ea826b103303e4285a62a2ff790615)
@@ -150,7 +158,7 @@ Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.2+7-LTS, mixed mode)
 ## Links
 
 - Course web-page: https://sp18.datastructur.es/index.html
-- The original cloned *skeleton* repository: https://github.com/Berkeley-CS61B/skeleton-sp18
+- The original cloned _skeleton_ repository: https://github.com/Berkeley-CS61B/skeleton-sp18
 - Autograder: https://www.gradescope.com/
 
 
