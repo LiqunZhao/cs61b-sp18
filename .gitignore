@@ -12,6 +12,7 @@ proj2/saved.txt
 proj2/out/production/proj2/saved.txt
 hw2/out/**/*.txt
 lab11/out/**/*.txt
+hw4/out/**/*.txt
 !**.json
 !.expelimicate
 !.gitignore

@@ -9,6 +9,7 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
 
 _Notes are unavailable until I finish up all the lectures..._
 
+
 - Week 1
     * [x] [note](./notes/week1.md)
         + [x] Lec.1: Intro to Java, Static Typing
@@ -16,6 +17,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [ ] [disc1](./discs/disc01.pdf)
     * [x] [lab1](./lab1): javac, java, git (More Git details: [Using Git](https://sp18.datastructur.es/materials/guides/using-git.html ))
     * [x] [hw0](https://sp18.datastructur.es/materials/hw/hw0/hw0): Basic Java Syntaxes
+
 - Week 2
     * [x] [note](./notes/week2.md)
         + [x] Lec.3: References
@@ -26,6 +28,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [lab2setup](./lab2setup/): Create Projects or import libraries within IntelliJ (Link: [Setting Up IntelliJ](https://sp18.datastructur.es/materials/lab/lab2setup/lab2setup))
     * [x] [lab2](./lab2/): Debugger, JUnit Test
     * [x] [proj0](./proj0/): Just Fun with Java
+
 - Week 3
     * [x] [note](./notes/week3.md)
         + Lec.6: Array-based List
@@ -35,6 +38,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [examprep3](./exampreps/examprep03sol.pdf): Naked Linked List (Insertion, Reversing)
     * [x] [lab3](./lab3/): Debugger, JUnit Test, Naked Linked List
     * [x] [proj1a](./proj1a/): Doubly-linked List, Doubly-linked Array
+
 - Week 4
     * [x] [note](./notes/week4.md)
         + Lec.9: Implementation Inheritance, Encapsulation, Type Checking, Higher Order Function
@@ -45,6 +49,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * lab4: Not available for ppl alone ...
     * [x] [proj1b](./proj1b/): Test Driven Development
     * [x] [proj1glod](./proj1gold/): Randomized Tests
+
 - Week 5
     * [x] [note](./notes/week5.md)
         + Lec.13: Conversion, Immutability, Generics
@@ -53,6 +58,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [examprep5](./exampreps/examprep05sol.pdf): Using ADTs
     * [x] [lab5](./proj2/byog/lab5): Pseudo random number, [Tile Rendering Engine](https://sp18.datastructur.es/materials/lab/lab5/lab5)
     * [x] [hw1](./hw1/): Package, Interface, Generics, Exception, Iteration
+
 - Week 6
     * [x] [note](./notes/week6.md)
         + Lec.15: Package, Access Control, `Object` method
@@ -61,6 +67,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [examprep6](./exampreps/examprep06sol.pdf): Exception, Linked List
     * [x] [lab6](./proj2/byog/lab6): Interactivity within [StdDraw](https://introcs.cs.princeton.edu/java/stdlib/javadoc/StdDraw.html)
     * [x] [proj2 phase1](./proj2/byog/Core): Large scale programming, Generative program using pseudo random number
+
 - Week 7
     * [x] [note](./notes/week7.md)
         + Lec.17: Introduction to Asymptotic Analysis, Big Theta
@@ -69,6 +76,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [disc7](./discs/disc07sol.pdf): Asymptotic Analysis Examples, Using ADTs
     * [x] [examprep7](./exampreps/examprep07sol.pdf): (A bit too much exam-flavored) AA Problems
     * [x] [proj2 phase2](./proj2/): UI Design, Serialization
+
 - Week 8
     * [x] [note](./notes/week8.md)
         + Lec.20: Disjoint Set
@@ -77,6 +85,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [disc8](./discs/disc08sol.pdf): AA of Pseudo Code, Mathematical Discussion of AA
     * [x] [examprep8](./exampreps/examprep08sol.pdf): AA of Pseudo Code
     * [x] [hw2](./hw2/hw2/): Percolation Simulation with Disjoint Set
+
 - Week 9
     * [x] [note](./notes/week9.md)
         + Lec.23: Hashing
@@ -86,6 +95,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [examprep9](./exampreps/examprep09sol.pdf): Hashing: Runtime, Function, Consistency with `equals()`
     * [x] [lab9](./lab9/lab9/): `BSTMap` & (Naïve) `HashMap`
     * [x] [hw3](./hw3/hw3/hash/): Hash Function
+
 - Week 10
     * [x] [note](./notes/week10.md)
         + Lec.27: Graph Introduction
@@ -93,6 +103,7 @@ _Notes are unavailable until I finish up all the lectures..._
     * [x] [disc10](./discs/disc10sol.pdf): Easy Quiz(Heap, Tree-Traversal, Quadtree)
     * [x] [examprep10](./exampreps/examprep10sol.pdf): Tree properties
     * [x] [lab10](./lab10/): Binary Min-Heap
+
 - Week 11
     * [ ] note
         + Lec.29
@@ -100,8 +111,11 @@ _Notes are unavailable until I finish up all the lectures..._
         + Lec.31
     * [ ] disc11
     * [ ] examprep11
-    * [ ] [lab11](./lab11/lab11/graphs/): BFS, Cycle Check, A* (**TODO: Completing [MazeAStarPath.java](./lab11/lab11/graphs/MazeAStarPath.java) remaining**)
-    * [ ] hw4
+    * [x] [lab11](./lab11/lab11/graphs/): BFS, Cycle Check, A*
+        + [ ] **Optional TODO**: Completing [MazeAStarPath.java](./lab11/lab11/graphs/MazeAStarPath.java#L41) remaining
+    * [x] [hw4](./hw4/hw4/puzzle/): A* Implementations
+        + [ ] **Optional TODO**: Implementing [`neighbors()`](hw4/hw4/puzzle/Word.java#L88) method in [Word.java](hw4/hw4/puzzle/Word.java), which works in constant time, remaining
+
 - Week 12
     * [ ] note
         + Lec.32: Basic Sorting Algorithms

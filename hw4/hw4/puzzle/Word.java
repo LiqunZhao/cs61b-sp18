@@ -6,6 +6,7 @@ import java.util.HashSet;
 import edu.princeton.cs.introcs.In;
 
 public class Word implements WorldState {
+
     private static Set<String> words;
     private static final String WORDFILE = "input/words10000.txt";
     private final String word;
@@ -19,7 +20,7 @@ public class Word implements WorldState {
 
         In in = new In(WORDFILE);
         while (!in.isEmpty()) {
-            words.add(in.readString());
+            words.add(in.readString().toLowerCase());
         }
     }
 
@@ -62,14 +63,13 @@ public class Word implements WorldState {
             int nw = i - 1;
             for (int j = 1; j <= b.length(); j++) {
                 int cj = Math.min(1 + Math.min(costs[j], costs[j - 1]),
-                         a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
+                        a.charAt(i - 1) == b.charAt(j - 1) ? nw : nw + 1);
                 nw = costs[j];
                 costs[j] = cj;
             }
         }
         return costs[b.length()];
     }
-
 
     @Override
     public Iterable<WorldState> neighbors() {
@@ -81,6 +81,44 @@ public class Word implements WorldState {
         }
         return neighbs;
     }
+
+//    /**
+//     * Neighbors method, which runs in constant time
+//     *
+//     * @TODO Currently doesn't work fine. Fix.
+//     */
+//    @Override
+//    public Iterable<WorldState> neighbors() {
+//        Set<WorldState> neighbors = new HashSet<>();
+//
+//        for (int i = 0; i < word.length(); i += 1) {
+//            char ci = word.charAt(i);
+//            char plus = (char) (ci + 1);
+//            char minus = (char) (ci - 1);
+//            String plusNeighbor = word.substring(0, i) + plus + word.substring(i + 1);
+//            String minusNeighbor = word.substring(0, i) + minus + word.substring(i + 1);
+//            String subtractedNeighbor = word.substring(0, i) + word.substring(i + 1);
+//
+//            if (words.contains(plusNeighbor)) {
+//                neighbors.add(new Word(plusNeighbor, goal));
+//            }
+//            if (words.contains(minusNeighbor)) {
+//                neighbors.add(new Word(minusNeighbor, goal));
+//            }
+//            if (words.contains(subtractedNeighbor)) {
+//                neighbors.add(new Word(subtractedNeighbor, goal));
+//            }
+//
+//            for (char c = 'a'; c <= 'z'; c += 1) {
+//                String addedNeighbor = word.substring(0, i) + c + word.substring(i + 1);
+//                if (words.contains(addedNeighbor)) {
+//                    neighbors.add(new Word(addedNeighbor, goal));
+//                }
+//            }
+//        }
+//
+//        return neighbors;
+//    }
 
     @Override
     public int estimatedDistanceToGoal() {
@@ -115,4 +153,5 @@ public class Word implements WorldState {
         result = 31 * result + (goal != null ? goal.hashCode() : 0);
         return result;
     }
+
 }
