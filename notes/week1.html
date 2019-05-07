@@ -1,0 +1,829 @@
+<!DOCTYPE html><html><head>
+      <title>week1</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+      <style> 
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/**
+ * This is the style.less sheet with Markdown-Preview-Enhanced,
+ * which gonna be applied globally, and the default style defined
+ * in this file is for writing Github's README.
+ * Note that this file should be in the directory that
+ * `Markdown Preview Enhanced: Customize Css` command leads to,
+ * which is currently located at "~/.mume/"
+ */
+.markdown-preview.markdown-preview {
+  /** Fonts */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", "Yu Gothic", YuGothic, sans-serif;
+  /** GitHub style */
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Helvetica Neue";
+  src: local("Helvetica Neue Regular");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 100;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 200;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), url(http://fonts.gstatic.com/s/raleway/v9/0dTEPzkLWceF7z0koJaX1A.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Raleway Light'), local('Raleway-Light'), url(http://fonts.gstatic.com/s/raleway/v9/-_Ctzj9b56b8RgXW8FArifk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+}
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Raleway SemiBold'), local('Raleway-SemiBold'), url(http://fonts.gstatic.com/s/raleway/v9/xkvoNo9fC8O2RDydKj12b_k_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+}
+.markdown-preview.markdown-preview h1,
+.markdown-preview.markdown-preview h2,
+.markdown-preview.markdown-preview h3,
+.markdown-preview.markdown-preview h4,
+.markdown-preview.markdown-preview h5,
+.markdown-preview.markdown-preview h6 {
+  font-family: Raleway, "Yu Gothic", YuGothic, sans-serif;
+}
+.markdown-preview.markdown-preview h1 {
+  border-bottom: 4px solid #eaecef;
+}
+.markdown-preview.markdown-preview h2 {
+  border-bottom: 2px solid #eaecef;
+}
+.markdown-preview.markdown-preview th {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+.markdown-preview.markdown-preview td {
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+}
+.markdown-preview.markdown-preview tr {
+  background-color: #fff;
+}
+.markdown-preview.markdown-preview tr:nth-child(2n) {
+  background-color: #f6f8fa;
+}
+/** Sidebar TOC */
+.md-sidebar-toc {
+  font-family: Raleway, 'Yu Gothic', YuGothic, sans-serif;
+}
+#sidebar-toc-btn {
+  bottom: unset;
+  top: 8px;
+}
+ 
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview   ">
+      <style>/**
+ * This .less sheet numbers headers in markdown preview, which is supposed
+ * to be used with Markdown-Preview-Enhanced.
+ * The numbering starts from H1, which would be good when writing
+ * documents that support rendering title through YAML or so
+ * (e.g. R-markdown).
+ * Note that this file location is specified in .atom/snippets.cson
+ * with "numbering-from-h1" prefix for easy usage.
+ */
+.markdown-preview.markdown-preview {
+  /**
+   * Numbers sections without skipping H1s
+   */
+  /** Skips numbering in presentation mode */
+}
+.markdown-preview.markdown-preview h1 {
+  counter-increment: h1counter;
+  counter-reset: h2counter;
+}
+.markdown-preview.markdown-preview h1.ignorenumbering {
+  counter-increment: none;
+  counter-reset: none;
+}
+.markdown-preview.markdown-preview h2 {
+  counter-increment: h2counter;
+  counter-reset: h3counter;
+}
+.markdown-preview.markdown-preview h2.ignorenumbering {
+  counter-increment: none;
+  counter-reset: none;
+}
+.markdown-preview.markdown-preview h3 {
+  counter-increment: h3counter;
+  counter-reset: h4counter;
+}
+.markdown-preview.markdown-preview h3.ignorenumbering {
+  counter-increment: none;
+  counter-reset: none;
+}
+.markdown-preview.markdown-preview h4 {
+  counter-increment: h4counter;
+}
+.markdown-preview.markdown-preview h4.ignorenumbering {
+  counter-increment: none;
+  counter-reset: none;
+}
+.markdown-preview.markdown-preview h1:before {
+  content: counter(h1counter) ". ";
+}
+.markdown-preview.markdown-preview h1.ignorenumbering:before {
+  content: none;
+}
+.markdown-preview.markdown-preview h2:before {
+  content: counter(h1counter) "." counter(h2counter) ". ";
+}
+.markdown-preview.markdown-preview h2.ignorenumbering:before {
+  content: none;
+}
+.markdown-preview.markdown-preview h3:before {
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) ". ";
+}
+.markdown-preview.markdown-preview h3.ignorenumbering:before {
+  content: none;
+}
+.markdown-preview.markdown-preview h4:before {
+  content: counter(h1counter) "." counter(h2counter) "." counter(h3counter) "." counter(h4counter) ". ";
+}
+.markdown-preview.markdown-preview h4.ignorenumbering:before {
+  content: none;
+}
+.markdown-preview.markdown-preview[data-presentation-mode] h1:before,
+.markdown-preview.markdown-preview .preview-slides .slide h1:before {
+  content: none !important;
+}
+.markdown-preview.markdown-preview[data-presentation-mode] h2:before,
+.markdown-preview.markdown-preview .preview-slides .slide h2:before {
+  content: none !important;
+}
+.markdown-preview.markdown-preview[data-presentation-mode] h3:before,
+.markdown-preview.markdown-preview .preview-slides .slide h3:before {
+  content: none !important;
+}
+.markdown-preview.markdown-preview[data-presentation-mode] h4:before,
+.markdown-preview.markdown-preview .preview-slides .slide h4:before {
+  content: none !important;
+}
+</style>
+<style>/**
+ * This .less sheet fine-tune github-light.css preview theme, which
+ * comes along with Markdown-Preview-Enhanced package.
+ * Colors headers fancily according to github-light theme.
+ * Note that this file location is specified in .atom/snippets.cson
+ * with "fancy-github-light" prefix for easy usage.
+ */
+.markdown-preview.markdown-preview {
+  /** Coloring headers  */
+}
+.markdown-preview.markdown-preview h1 {
+  color: #101e8e;
+  border-bottom: 4px solid #101e8e;
+}
+.markdown-preview.markdown-preview h2 {
+  color: #1416d2;
+  border-bottom: 2px solid #1416d2;
+}
+.markdown-preview.markdown-preview h3 {
+  color: #7d28d7;
+  text-decoration: underline;
+}
+.markdown-preview.markdown-preview h4 {
+  color: #a51ec2;
+}
+.markdown-preview.markdown-preview h5 {
+  color: #d25d10;
+}
+.markdown-preview.markdown-preview h6 {
+  color: #268e10;
+}
+</style>
+<h1 class="mume-header ignorenumbering" id="week-1-lec1-lec2">Week 1 - Lec.1 &amp; Lec.2</h1>
+
+<h2 class="mume-header ignorenumbering" id="toc">TOC</h2>
+
+<div class="code-chunk" data-id="code-chunk-id-0" data-cmd="toc"><div class="input-div"><div class="btn-group"><div class="run-btn btn"><span>&#x25B6;&#xFE0E;</span></div><div class="run-all-btn btn">all</div></div><div class="status">running...</div></div><div class="output-div"></div></div><ol>
+<li><a href="#lec1-intro-hello-world-java">Lec.1 - Intro, Hello World Java</a>
+<ol>
+<li><a href="#hello-world">Hello world</a></li>
+<li><a href="#static-typing">Static typing</a></li>
+<li><a href="#declaring-functions-in-java">Declaring functions in Java</a></li>
+</ol>
+</li>
+<li><a href="#lec2-defining-and-using-classes">Lec.2 - Defining and Using Classes</a>
+<ol>
+<li><a href="#compilation">Compilation</a></li>
+<li><a href="#defining-and-instantiating-classes">Defining and Instantiating Classes</a></li>
+<li><a href="#arrays-of-objects">Arrays of Objects</a></li>
+<li><a href="#static-vs-instance-methods">Static vs. Instance methods</a></li>
+<li><a href="#public-static-void-mainstring-args"><code>public static void main(String[] args)</code> ?</a></li>
+</ol>
+</li>
+</ol>
+<h1 class="mume-header" id="lec1-intro-hello-world-java">Lec.1 - Intro, Hello World Java</h1>
+
+<h2 class="mume-header" id="hello-world">Hello world</h2>
+
+<blockquote>
+<p>HelloWorld.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloWorld</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;Hello world !&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><ol>
+<li>All code in Java must be part of a class</li>
+<li>We delimit the beginning and end of segments of code<br>
+using <code>{</code> and <code>}</code></li>
+<li>All statements in Java must end in a semi-colon ;</li>
+<li>For code to run we need <code>public static void main(String[] args)</code></li>
+</ol>
+<h2 class="mume-header" id="static-typing">Static typing</h2>
+
+<blockquote>
+<p>HelloNumbers.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">HelloNumbers</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">int</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span>x <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>x<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            x <span class="token operator">=</span> x <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token comment">// x = &quot;horse&quot;; should cause error</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><ol>
+<li>Before Java variables can be used, they must be declared</li>
+<li>Java variables must have a specific type</li>
+<li>Java variable types can never change</li>
+<li>Types are verified before the code even runs !!!</li>
+</ol>
+<br>
+<p>In summary static typing brings us ...</p>
+<ul>
+<li><em><strong>The goods</strong></em>:
+<ul>
+<li><strong>Type check</strong>: Types are checked before the program is <em>even run</em>, allowing developers to catch type errors with ease</li>
+<li><strong>Type error free</strong>: If the compiled version of a program is distributed, it is (mostly) guaranteed to be free of any type errors
+<ul>
+<li>makes the code more reliable</li>
+</ul>
+</li>
+<li><strong>Easy understanding</strong>: Every variable, parameter, and function has a declared type, making it easier for a programmer to understand and reason about code</li>
+<li><strong>Efficiency</strong>: Code can run more efficiently, e.g. no need to do expensive runtime type checks</li>
+</ul>
+</li>
+<li><em><strong>The bads</strong></em>:
+<ul>
+<li><strong>Verbose</strong>: Code is more verbose</li>
+<li><strong>Less general</strong>: Code is less general
+<ul>
+<li>-&gt; Use generics in java</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="declaring-functions-in-java">Declaring functions in Java</h2>
+
+<blockquote>
+<p>LargerDemo.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LargerDemo</span> <span class="token punctuation">{</span>
+    <span class="token comment">/** Returns the larger of x and y. */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">int</span> <span class="token function">larger</span><span class="token punctuation">(</span><span class="token keyword">int</span> x<span class="token punctuation">,</span> <span class="token keyword">int</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>x <span class="token operator">&gt;</span> y<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> x<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> y<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token function">larger</span><span class="token punctuation">(</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><ol>
+<li><strong>Functions must be declared as part of a class in Java</strong>
+<ul>
+<li>A function that is part of a class is called a <strong>method</strong>. So in Java, all functions are methods</li>
+</ul>
+</li>
+<li>To define a function in Java, we use <code>public static</code> (We will see alternate ways of defining functions later)</li>
+<li>All parameters of a function must have a declared type, and the return value of the function must have a declared type.
+<ul>
+<li>Functions in Java return only one value!</li>
+</ul>
+</li>
+</ol>
+<h1 class="mume-header" id="lec2-defining-and-using-classes">Lec.2 - Defining and Using Classes</h1>
+
+<h2 class="mume-header" id="compilation">Compilation</h2>
+
+<p>Why make a <code>.class</code> file at all ?</p>
+<ul>
+<li><code>.class</code> file has been type checked. Distributed code is safer</li>
+<li><code>.class</code> files are <em>simpler</em> for machine to execute. Distributed code is faster</li>
+<li>Minor benefit: Protects our intellectual property. No need to give out source</li>
+</ul>
+<h2 class="mume-header" id="defining-and-instantiating-classes">Defining and Instantiating Classes</h2>
+
+<ul>
+<li>Every method (a.k.a. function) is associated with some class</li>
+<li>To run a class, we must define a <code>main</code> method
+<ul>
+<li><strong>Not all classes have a main method !</strong></li>
+</ul>
+</li>
+</ul>
+<p>Define class without main method</p>
+<blockquote>
+<p>Dog.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;bark!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p>Calls a method from another class</p>
+<blockquote>
+<p>DogLauncher.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DogLauncher</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Dog</span><span class="token punctuation">.</span><span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><p>To run,</p>
+<blockquote>
+<p>$ javac DogLauncher.java<br>
+$ java DogLauncher</p>
+</blockquote>
+<pre data-role="codeBlock" data-info class="language-"><code>bark!
+</code></pre><h3 class="mume-header ignorenumbering" id="instantiating">Instantiating</h3>
+
+<ul>
+<li>Classes can contain not just methods, but also data</li>
+<li>Classes can be instantiated as objects
+<ul>
+<li>We&apos;ll create a single <code>Dog</code> class, and then create instances of this <code>Dog</code></li>
+<li>The class provides a blueprint that all <code>Dog</code> objects will follow</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Dog.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Dog</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> weightInPounds<span class="token punctuation">;</span>
+
+    <span class="token comment">/** One integer constructor for Dogs */</span>
+    <span class="token keyword">public</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token keyword">int</span> w<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        weightInPounds <span class="token operator">=</span> w<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>weightInPounds <span class="token operator">&lt;</span> <span class="token number">10</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;yip!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>weightInPounds <span class="token operator">&lt;</span> <span class="token number">30</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;bark!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">&quot;woooof!&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><blockquote>
+<p>DogLauncher.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DogLauncher</span> <span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">Dog</span> d <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token number">51</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        d<span class="token punctuation">.</span><span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><h3 class="mume-header ignorenumbering" id="terminology">Terminology</h3>
+
+<blockquote>
+<p>Dog.java</p>
+</blockquote>
+<ul>
+<li><code>public int weightInPounds;</code>: <strong>Instance variable</strong>
+<ul>
+<li>Can have as many of these as we want</li>
+</ul>
+</li>
+<li><code>public Dog(int w) {...}</code>: <strong>Constructor</strong>
+<ul>
+<li>Determines how to instantiate the class (not a method)</li>
+</ul>
+</li>
+<li><code>public void makeNoise() {...}</code>: <strong>Non-static method</strong> a.k.a. <strong>Instance method</strong>
+<ul>
+<li>If the method is going to be invoked by an instance of the class, then it should be <em>non-static</em></li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>DogLauncher.java</p>
+</blockquote>
+<ul>
+<li><code>Dog smallDog;</code>: <strong>Declaration</strong></li>
+<li><code>new Dog(20);</code>: <strong>Instantiation</strong></li>
+<li><code>smallDog = new Dog(5);</code>: Instantiation &amp; <strong>Assignment</strong></li>
+<li><code>Dog hugeDog = new Dog(150);</code>: Declaration, Instantiation &amp; Assignment</li>
+<li><code>hugeDog.makeNoise();</code>: <strong>Invocation</strong> (of the 150 lb <code>Dog</code>&apos;s <code>makeNoise</code> method
+<ul>
+<li><code>.</code> means we want to use <strong>member</strong> (a method or variable) belonging to <code>hugeDog</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="arrays-of-objects">Arrays of Objects</h2>
+
+<p>To create an array of objects:</p>
+<ul>
+<li>First use the <code>new</code> keyword to create the array</li>
+<li>Then use <code>new</code> again for each object that we want to put in the array</li>
+</ul>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token class-name">Dog</span><span class="token punctuation">[</span><span class="token punctuation">]</span> dogs <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+dogs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token number">8</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dogs<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Dog</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+dogs<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">makeNoise</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</pre><h2 class="mume-header" id="static-vs-instance-methods">Static vs. Instance methods</h2>
+
+<p>Key differences between static and non-static (a.k.a. instance) method</p>
+<ul>
+<li>Static method are invoked using the class name: <code>Dog.makeNoise();</code>
+<ul>
+<li>Can&apos;t access instance variables: can&apos;t access <code>weightInPounds</code></li>
+</ul>
+</li>
+<li>Instance methods are invoked using an instance name: <code>d.makeNoise();</code></li>
+</ul>
+<h3 class="mume-header ignorenumbering" id="why-static-methods">Why Static Methods ?</h3>
+
+<ul>
+<li>Some classes are <em>never</em> instantiated.
+<ul>
+<li>e.g. <code>x = Math.round(5.6);</code></li>
+<li>c.f. <code>Math m = new Math();</code> &amp; <code>x = m.round();</code></li>
+</ul>
+</li>
+</ul>
+<br>
+<ul>
+<li>A class may have a mix of static and non-static methods
+<ul>
+<li>A variable or method defined in a class is called a <strong>member</strong> of that class</li>
+<li>Static members are accessed using class name: <code>Dog.binomen</code></li>
+<li>Non-static members <em>can&apos;t</em> be invoked using class name: <s><code>Dog.makeNoise()</code></s></li>
+<li>Static methods must access instance variables via a specific instance: <code>d1.makeNoise()</code></li>
+</ul>
+</li>
+</ul>
+<h2 class="mume-header" id="public-static-void-mainstring-args"><code>public static void main(String[] args)</code> ?</h2>
+
+<ul>
+<li>One special role for <code>Strings[]</code>: <strong>Command Line Arguments</strong></li>
+</ul>
+<blockquote>
+<p>ArgsDemo.java</p>
+</blockquote>
+<pre data-role="codeBlock" data-info="java" class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ArgsDemo</span> <span class="token punctuation">{</span>
+    <span class="token comment">/** Prints out the 0th command line argument */</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token class-name">String</span><span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token class-name">System</span><span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>args<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre><blockquote>
+<p>&gt; java ArgsDemo hello test</p>
+</blockquote>
+<pre data-role="codeBlock" data-info class="language-"><code>hello
+</code></pre>
+      </div>
+      <div class="md-sidebar-toc"><ol>
+<li><a href="#lec1-intro-hello-world-java">Lec.1 - Intro, Hello World Java</a>
+<ol>
+<li><a href="#hello-world">Hello world</a></li>
+<li><a href="#static-typing">Static typing</a></li>
+<li><a href="#declaring-functions-in-java">Declaring functions in Java</a></li>
+</ol>
+</li>
+<li><a href="#lec2-defining-and-using-classes">Lec.2 - Defining and Using Classes</a>
+<ol>
+<li><a href="#compilation">Compilation</a></li>
+<li><a href="#defining-and-instantiating-classes">Defining and Instantiating Classes</a></li>
+<li><a href="#arrays-of-objects">Arrays of Objects</a></li>
+<li><a href="#static-vs-instance-methods">Static vs. Instance methods</a></li>
+<li><a href="#public-static-void-mainstring-args"><code>public static void main(String[] args)</code> ?</a></li>
+</ol>
+</li>
+</ol>
+</div>
+      <a id="sidebar-toc-btn">&#x2261;</a>
+    
+    
+    
+    
+    
+    
+    
+    
+<script>
+document.body.setAttribute('html-show-sidebar-toc', true)
+var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
+sidebarTOCBtn.addEventListener('click', function(event) {
+  event.stopPropagation()
+  if (document.body.hasAttribute('html-show-sidebar-toc')) {
+    document.body.removeAttribute('html-show-sidebar-toc')
+  } else {
+    document.body.setAttribute('html-show-sidebar-toc', true)
+  }
+})
+</script>
+      
+  
+    </body></html>

@@ -7,8 +7,6 @@ Beyond of all, I really, really appreciate this great learning-materials are mad
 
 ## Archives
 
-_HTML-rendered notes are unavailable until I finish up all the lectures..._
-
 | Week | Note | Discussion | Examprep | Lab | Project / Homework |
 |------|------|------------|----------|-----|--------------------|
 | 1 | <li> [Lec.1: Intro to Java, Static Typing](notes/week1.md#lec1---intro-hello-world-java) </li> <li> [Lec.2 Class](notes/week1.md#lec2---defining-and-using-classes) </li> | [disc1](./discs/disc01.pdf) | N/A | [lab1](./lab1): `javac`, `java`, `git` <br> (More `git`: [Using Git](https://sp18.datastructur.es/materials/guides/using-git.html )) | [hw0](https://sp18.datastructur.es/materials/hw/hw0/hw0): Basic Java Syntaxes |
