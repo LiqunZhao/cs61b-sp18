@@ -7,7 +7,7 @@ toc:
     depth_to: 2
     ordered: false
 export_on_save:
-    # html: true
+    html: true
 ---
 
 <!-- Importing styles for numbering sections from H1 -->
@@ -37,7 +37,13 @@ export_on_save:
 	* [Quick Sort](#quick-sort)
 	* [Performance](#performance-5)
 	* [Avoiding Worst Case](#avoiding-worst-case)
+	* [In-place Partitioning](#in-place-partitioning)
+	* [Smarter Pivot Selection: Median Pivot](#smarter-pivot-selection-median-pivot)
 	* [Summary](#summary-2)
+* [Lec.34 - Sort Stability, Shuffling](#lec34-sort-stability-shuffling)
+	* [Stability](#stability)
+	* [Optimizing Sorts](#optimizing-sorts)
+	* [Shuffling](#shuffling)
 
 <!-- /code_chunk_output -->
 
@@ -296,7 +302,7 @@ Runs in $\Theta(N)$ time
 ## Quick Sort
 
 Partitioning example:
-![partiotioning-example-2](../assets/week12/partiotioning-example-2.png)
+![partitioning-example-2](../assets/week12/partitioning-example-2.png)
 
 Observations on partitioning:
 - 5 is _in its place_: Exactly where it'd be if the array were sorted
@@ -326,7 +332,7 @@ Worst case: Pivot always lands at beginning of array
 
 Runtime: $\Theta(N^2)$
 
-### Then, Is Quick Sort Really _Fastest_ ??
+### Then, Is Quick Sort Really "Fastest" ??
 
 $\Theta(N \log N)$ vs. $\Theta(N^2)$ is a **{++really big deal++}**:
 - How can quick sort be the fastest sort empirically ?
@@ -355,14 +361,14 @@ For $N$ items:
 
 ![empirical-quicksort-runtime](../assets/week12/empirical-quicksort-runtime.png)
 
-#### Summary
+#### Summary {.ignorenumbering}
 
 Theoretical analysis:
 - Best case: $\Theta(N \log N)$
 - Worst case: $\Theta(N^2)$
 - **Randomly chosen array case: $\Theta(N \log N)$** expected with extremely high probability
 
-Why is it faster than Merge Sort ($\Theta(N \log N)$ in best/worst)
+Why is it faster than Merge Sort ($\Theta(N \log N)$ in best/worst):
 - Requires empirical analysis, no obvious reason why.
 
 
@@ -388,7 +394,7 @@ Four philosophies to avoid running into the worst case:
 ### Philosophy #1: Randomness
 
 Dealing with bad ordering:
-- Strategy #1: Pick Pivots randomly
+- Strategy #1: Random pivot picking
 - Strategy #2: Shuffle the array before we sort
     * Still requires care in partitioning code to avoid $\Theta(N^2)$ behavior on arrays of duplicates
 
@@ -397,10 +403,10 @@ Dealing with bad ordering:
 Randomness is necessary for best Quick Sort performance:
 - Any other deterministic / constant time pivot selection has a family of dangerous inputs that an adversary could easily generate: [A Killer Adversary for Quicksort](https://www.cs.dartmouth.edu/~doug/mdmspe.pdf)
 
-#### Linear Time Pivot Pick {ignore=True .ignorenumbering}
+#### Median Pivot Selection {ignore=True .ignorenumbering}
 
-Could calculate the actual median in linear time:
-- _Exact median Quick Sort_ is safe: Worst case $\Theta(N \log N)$, but it is slower than Merge Sort
+Could calculate the actual median in _linear time_:
+- _Exact median Quick Sort is safe_: Worst case $\Theta(N \log N)$, but it is slower than Merge Sort
 
 ### Philosophy #3: Introspection
 
@@ -409,12 +415,125 @@ Can also simply watch our recursion depth:
 - Perfectly reasonable approach, though not super common in practice
 
 
+## In-place Partitioning
+
+Tony Hoare's partitioning scheme: [Demo](https://docs.google.com/presentation/d/1DOnWS59PJOa-LaBfttPRseIpwLGefZkn450TMSSUiQY/pub?start=false&loop=false&delayms=3000&slide=id.g463de7561_042):
+- Left pointer loves items smaller than or equal to pivot
+- Right pointer loves items larger than pivot
+- Big idea: Walk towards each other, swapping anything they don't like
+    * => Result: The left are _small_ and the right are _large_
+
+Using this partitioning scheme yields a very fast Quicksort:
+- Though faster schemes have been found since
+- Overall runtime still depends crucially on pivot selection strategy !
+
+More recent pivot/partitioning schemes do somewhat better:
+- Best known Quicksort uses the other two-pivot scheme
+- Interesting note: This version of Quicksort was introduced to the world by a previously unknown guy, in [a Java developers forum](https://web.archive.org/web/20100428064017/http://permalink.gmane.org/gmane.comp.java.openjdk.core-libs.devel/2628)
+
+
+## Smarter Pivot Selection: Median Pivot
+
+Randomness is very effective to avoid worst case behavior, but there are cases when we don't like having randomness in the sorting routine:
+- Another approach: **Using the exact median as pivot yields safe Quicksort**
+- Median is the best possible pivot: Splits problem into two problems of size $N / 2$
+
+### [BFPRT](http://www.cs.princeton.edu/~wayne/cs423/lectures/selection-4up.pdf)
+
+Algorithm to find the exact median in $\Theta(N)$ time:
+- Developed in 1972, and four from the authors won Turing Award
+- But in practice rarely used
+
+### Quick Select
+
+The best known median identification algorithm is _partitioning itself_:
+![quick-select](../assets/week12/quick-select.png)
+
+On average, Quick Select will take $\Theta(N)$:
+![quick-select-average](../assets/week12/quick-select-average.png)
+
+Worst asymptotic performance: $\Theta(N^2)$:
+- Occurs if array is in sorted order
+
+
 ## Summary
 
+### General comparison
 
 |                   | Memory                    | Time                        | Notes                        |
 |-------------------|---------------------------|-----------------------------|------------------------------|
+| Selection Sort    | $\Theta(1)$               | $\Theta(N^2)$               | Slow                         |
 | Heap Sort         | $\Theta(1)$               | $\Theta(N \log N)$          | Bad caching                  |
 | Insertion Sort    | $\Theta(1)$               | $\Theta(N^2)$               | $\Theta(N)$ if almost sorted |
 | Merge Sort        | $\Theta(N)$               | $\Theta(N \log N)$          | N/A                          |
 | Random Quick Sort | $\Theta(\log N)$ expected | $\Theta(N \log N)$ expected | Fastest sort                 |
+
+Mechanisms:
+- Selection sort: Find the smallest item and put it at the front
+- Heap sort: Use Max-heap and sink/promote items
+- Insertion sort: Figure out where to insert the current item
+- Merge sort: Merge two sorted halves into one sorted whole
+- Partition (quick) sort: Partition items around a pivot
+
+### vs. Mergesort
+
+| Strategy         | Pivot selection | Partition  | Worst case avoidance | Time        | Worst case         |
+|------------------|-----------------|------------|----------------------|-------------|--------------------|
+| Mergesort        | N/A             | N/A        | N/A                  | 2.1 seconds | $\Theta(N \log N)$ |
+| Quicksort L3S    | Leftmost        | 3-scan     | Shuffle              | 4.4 sec     | $\Theta(N^2)$      |
+| Quicksort LTHS   | Leftmost        | Tony Hoare | Shuffle              | 1.7 sec     | $\Theta(N^2)$      |
+| Quicksort PickTH | Exact median    | Tony Hoare | Exact median         | 10.0 sec    | $\Theta(N \log N)$ |
+
+Observations:
+- Quicksort with Tony Hoare's two pointer scheme is better than Mergesort and can be faster with [the recent scheme](https://web.archive.org/web/20100428064017/http://permalink.gmane.org/gmane.comp.java.openjdk.core-libs.devel/2628)
+- Quicksort using PICK to find the exact median is very slow:
+    * Cost to compute medians is too high
+    * => **Have to live with worst case $\Theta(N^2)$ if we want good practical performance**
+    * Quick Select turns out to be still quite slow (And a little strange to do a bunch of partitions to identify the optimal item to partition around)
+
+
+
+# Lec.34 - Sort Stability, Shuffling
+
+
+## Stability
+
+A sort is said to be stable if order of equivalent items is preserved:
+- Equivalent items don't _cross over_ when being stably sorted
+
+![sorting-stability](../assets/week12/sorting-stability.png)
+
+**Stable Quicksort will be slower**:
+- Unstable partitioning schemes (like Hoare partitioning) tend to be faster
+- All reasonable partitioning schemes yield $\Theta(N \log N)$ expected runtime, but with different constants
+
+## Optimizing Sorts
+
+Additional tricks we can play:
+- Switch to Insertion sort:
+    * When a subproblem reaches size 15 or lower, use Insertion sort
+- Make sort _**adaptive**_: Exploit existing order in array (Insertion sort, Smooth sort, TimSort)
+- Exploit restrictions on set of keys: If number of keys is some constant, we can sort faster
+- For Quicksort: Make the algorithm Introspective, switching to a different sorting method if recursion goes too deep
+    * Only a problem for deterministic flavors of Quicksort
+
+### `Arrays.sort` {ignore=True .ignorenumbering}
+
+In Java, `Arrays.sort(ary)` uses:
+- Mergesort (specifically the TimSort variant) if `ary` consists of `Object`s
+    * `sort(Object[] ary)`: Sorts the specified array of objects into ascending order, according to the _natural_ ordering of its elements
+    * _Natural_ means that _we have to care about stability_
+- Quicksort if `ary` consists of primitives
+    * `sort(int[] ary)`: Sorts the specified array into ascending numerical order
+
+## Shuffling
+
+Easiest way:
+- Generate $N$ random numbers, and attach one to each array item
+- Sort the items by the attached random number
+
+Example of bad randomization approach: [In response to anti-trust investigation, Microsoft agreed to provide a random browser selection website](http://www.robweir.com/blog/2010/03/new-microsoft-shuffle.html)
+- Make `compareTo` return a random answer
+- Doesn't play well with Insertion sort
+    * We use Insertion sort for $N \leq 15$
+- Simple programming error ... ?
